@@ -24,6 +24,13 @@ set noerrorbells
 set spell
 set spelllang=en_us,fr_ch
 
+""""""""""""""""""""""""""""
+" -> General file management
+""""""""""""""""""""""""""""
+set nobackup
+set undodir=~/.config/nvim/undodir
+set undofile
+
 """"""""""""""""""""""""""""""""""""""""
 " ==> Text and Tab options
 """"""""""""""""""""""""""""""""""""""""
@@ -65,6 +72,9 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
+" Ack
+Plug 'mileszs/ack.vim'
+
 call plug#end()
 
 filetype plugin indent on   " required
@@ -99,6 +109,15 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " Set theme
 let g:airline_theme='ayu_mirage'
+
+
+""""""""""""""""""""""""""""""""
+" ==> Ack
+""""""""""""""""""""""""""""""""
+
+cnoreabbrev Ack Ack!
+nnoremap <leader>a :Ack!<Space>
+
 
 
 """"""""""""""""""""""""""""""""
