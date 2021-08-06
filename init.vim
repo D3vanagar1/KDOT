@@ -34,8 +34,20 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'mbbill/undotree'
 " Great Git wrapper
 Plug 'tpope/vim-fugitive'
+" Tree explorer
+Plug 'preservim/nerdtree'
+" Fuzzy finder (C-p to activate)
+Plug 'ctrlpvim/ctrlp.vim'
+" Syntax highlighting
+Plug 'neoclide/coc.nvim',{'branch':'release'}
 
 call plug#end()
+
+""""""""""""""""""""""""""""""""
+" -> NERDTree mappings
+""""""""""""""""""""""""""""""""
+
+map <silent> <C-n> :NERDTreeFocus<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader remaps
