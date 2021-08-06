@@ -1,7 +1,9 @@
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
-source ~/.config/nvim/themes/onedark.vim
+
+" source onedark theme
+source ~/.config/nvim/colors/onedark.vim
 
 syntax on
 
