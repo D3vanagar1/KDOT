@@ -18,11 +18,11 @@ set ignorecase
 set mouse=v
 set hlsearch
 set autoindent
-set nu
-set relativenumber
+set nu rnu
 set background=dark
 set noerrorbells
-
+set spell
+set spelllang=en_us,fr_ch
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Text and Tab options
