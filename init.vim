@@ -6,6 +6,9 @@ syntax on
 
 set nocompatible
 filetype off
+set nowrap
+set smartcase
+set smartindent
 set showmatch
 set ignorecase
 set mouse=v
@@ -13,6 +16,8 @@ set hlsearch
 set autoindent
 set nu
 set relativenumber
+set background=dark
+set noerrorbells
 
 
 """"""""""""""""""""""""""""""""""""""""
@@ -43,6 +48,8 @@ Plug 'neoclide/coc.nvim',{'branch':'release'}
 
 call plug#end()
 
+filetype plugin indent on   " required
+
 """"""""""""""""""""""""""""""""
 " -> NERDTree mappings
 """"""""""""""""""""""""""""""""
@@ -59,4 +66,6 @@ nnoremap <leader>w :w<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 nnoremap <leader>u :UndotreeShow<CR>
+" Remove search highlighting
+nnoremap <silent> <leader><CR> :noh<CR>
 
