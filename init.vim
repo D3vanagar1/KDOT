@@ -1,6 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
+source ~/.config/nvim/themes/onedark.vim
 
 syntax on
 
@@ -46,9 +47,18 @@ Plug 'ctrlpvim/ctrlp.vim'
 " Syntax highlighting
 Plug 'neoclide/coc.nvim',{'branch':'release'}
 
+" Theme
+Plug 'joshdick/onedark.vim'
+
 call plug#end()
 
 filetype plugin indent on   " required
+
+""""""""""""""""""""""""""""""""
+" -> Onedark
+""""""""""""""""""""""""""""""""
+
+colorscheme onedark
 
 """"""""""""""""""""""""""""""""
 " -> NERDTree mappings
