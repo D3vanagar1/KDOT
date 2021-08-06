@@ -52,6 +52,13 @@ Plug 'neoclide/coc.nvim',{'branch':'release'}
 " Theme
 Plug 'joshdick/onedark.vim'
 
+" Status/tabline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+" Tmux statusline generator
+Plug 'edkolev/tmuxline.vim'
+
 call plug#end()
 
 filetype plugin indent on   " required
@@ -59,8 +66,21 @@ filetype plugin indent on   " required
 """"""""""""""""""""""""""""""""
 " -> Onedark
 """"""""""""""""""""""""""""""""
-
 colorscheme onedark
+
+
+""""""""""""""""""""""""""""""""
+" -> vim-airline
+""""""""""""""""""""""""""""""""
+
+" Enable smarter tab line
+let g:airline#extensions#tabline#enabled = 1
+" Define "straight" tabs
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+" set path formatter to unique_tail_improved
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
 
 """"""""""""""""""""""""""""""""
 " -> NERDTree mappings
