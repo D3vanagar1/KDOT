@@ -59,6 +59,11 @@ Plug 'vim-airline/vim-airline-themes'
 " Tmux statusline generator
 Plug 'edkolev/tmuxline.vim'
 
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 call plug#end()
 
 filetype plugin indent on   " required
@@ -67,6 +72,17 @@ filetype plugin indent on   " required
 " -> Onedark
 """"""""""""""""""""""""""""""""
 colorscheme onedark
+
+
+""""""""""""""""""""""""""""""""
+" -> Telescope
+""""""""""""""""""""""""""""""""
+
+" Find files using telescope
+nnoremap <leader>ff <cmd>Telescope find_files<CR>
+nnoremap <leader>fg <cmd>Telescope live_grep<CR>
+nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
 
 """"""""""""""""""""""""""""""""
