@@ -1,7 +1,8 @@
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
-
+" auto-source init.vim
+nnoremap <C-s> :source $MYVIMRC<CR>
 " source onedark theme
 source ~/.config/nvim/colors/onedark.vim
 
@@ -118,4 +119,29 @@ nnoremap <leader>Q :q!<CR>
 nnoremap <leader>u :UndotreeShow<CR>
 " Remove search highlighting
 nnoremap <silent> <leader><CR> :noh<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""
+" ==> Additional helpful remaps
+""""""""""""""""""""""""""""""""""""""""
+
+" Behave like the rest of vim
+nnoremap Y y$
+
+" Keep screen centered
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+" Jumplist mutations
+nnoremap <expr> k (v:count > 5 ? "m`" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m`" . v:count : "") . 'j'
+
+" Moving text (move text up and down with j and k
+vnoremap J :m `>+1<CR>gv=gv
+vnoremap K :m `>-2<CR>gv=gv
+inoremap <C-j> :m .+1<CR>==
+inoremap <C-k> :m .-2<CR>==
+nnoremap <leader>j :m .+1<CR>==
+nnoremap <leader>k :m .-2<CR>==
 
