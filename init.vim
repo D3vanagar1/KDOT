@@ -26,7 +26,6 @@ set nu rnu
 set background=dark
 set noerrorbells
 set spell
-set spelllang=en_us,fr_ch
 
 """"""""""""""""""""""""""""
 " -> General file management
@@ -88,7 +87,7 @@ filetype plugin indent on   " required
 " -> Onedark
 """"""""""""""""""""""""""""""""
 colorscheme onedark
-let g:onedark_termcolors=16
+let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 
 """"""""""""""""""""""""""""""""
