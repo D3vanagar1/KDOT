@@ -1,6 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
+
+
+" Remove all trailing whitespace when saving file
+autocmd BufWritePre * :%s/\s\+$//e
 " auto-source init.vim
 nnoremap <C-s> :source $MYVIMRC<CR>
 " source onedark theme
@@ -71,6 +75,7 @@ Plug 'edkolev/tmuxline.vim'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-fzy-native.nvim'
 
 " Ack
 Plug 'mileszs/ack.vim'
@@ -127,15 +132,21 @@ nnoremap <leader>a :Ack!<Space>
 map <silent> <C-n> :NERDTreeFocus<CR>
 
 """"""""""""""""""""""""""""""""""""""""
-" ==> Leader remaps
+" ==> Leader mappings
 """"""""""""""""""""""""""""""""""""""""
 
 let mapleader = " "
 
+" Save current file
 nnoremap <leader>w :w<CR>
+" Quit from current file
 nnoremap <leader>q :q<CR>
+" Quit from current file w/o saving
 nnoremap <leader>Q :q!<CR>
+" Open undotree
 nnoremap <leader>u :UndotreeShow<CR>
+" Show path of current file
+nnoremap <leader>p :echo expand('%')<CR>
 " Remove search highlighting
 nnoremap <silent> <leader><CR> :noh<CR>
 
