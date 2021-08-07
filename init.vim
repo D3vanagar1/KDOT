@@ -1,4 +1,21 @@
 """"""""""""""""""""""""""""""""""""""""
+" Sections:
+"   => General
+"       -> File management
+"   => Text and tab options
+"   => Plugins
+"       -> Onedark
+"       -> Telescope
+"       -> vim-airline
+"       -> Ack
+"       -> NERDTree
+"   => Leader mappings
+"   => Additional helpful remaps
+"   => Functions
+""""""""""""""""""""""""""""""""""""""""
+
+
+""""""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
 
@@ -126,7 +143,7 @@ nnoremap <leader>a :Ack!<Space>
 
 
 """"""""""""""""""""""""""""""""
-" -> NERDTree mappings
+" -> NERDTree
 """"""""""""""""""""""""""""""""
 
 map <silent> <C-n> :NERDTreeFocus<CR>
@@ -175,3 +192,7 @@ inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
+
+""""""""""""""""""""""""""""""""""""""""
+" ==> Functions
+""""""""""""""""""""""""""""""""""""""""
