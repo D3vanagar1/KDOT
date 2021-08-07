@@ -18,6 +18,7 @@ tags
 # Persistent undo
 [._]*.un~
 
+undodir/*
+
 plugged/*
 
-undodir/*
