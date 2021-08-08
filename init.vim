@@ -96,6 +96,9 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " Ack
 Plug 'mileszs/ack.vim'
 
+"Quickscope (highlight for a unique character in every word on a line)
+Plug 'unblevable/quick-scope'
+
 call plug#end()
 
 filetype plugin indent on   " required
@@ -134,7 +137,7 @@ let g:airline_theme='ayu_mirage'
 
 
 """"""""""""""""""""""""""""""""
-" ==> Ack
+" -> Ack
 """"""""""""""""""""""""""""""""
 
 cnoreabbrev Ack Ack!
@@ -147,6 +150,18 @@ nnoremap <leader>a :Ack!<Space>
 """"""""""""""""""""""""""""""""
 
 map <silent> <C-n> :NERDTreeFocus<CR>
+
+""""""""""""""""""""""""""""""""
+" -> Quickscope
+""""""""""""""""""""""""""""""""
+
+" Trigger a highlight in the appropriate direction when pressing these keys:
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+
+highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
+highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
+
+let g:qs_max_chars=150
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
