@@ -9,6 +9,7 @@
 "       -> vim-airline
 "       -> Ack
 "       -> NERDTree
+"       -> Quickscope
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Functions
@@ -58,7 +59,6 @@ set undofile
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
-
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Plugins
@@ -186,6 +186,16 @@ nnoremap <silent> <leader><CR> :noh<CR>
 """"""""""""""""""""""""""""""""""""""""
 " ==> Additional helpful remaps
 """"""""""""""""""""""""""""""""""""""""
+
+" Making new splits
+nnoremap <leader>nh :new<space>
+nnoremap <leader>nv :vnew<space>
+
+" Moving between windows
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 " Behave like the rest of vim
 nnoremap Y y$
