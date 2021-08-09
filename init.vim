@@ -15,11 +15,9 @@
 "   => Functions
 """"""""""""""""""""""""""""""""""""""""
 
-
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
-
 
 " Remove all trailing whitespace when saving file
 autocmd BufWritePre * :%s/\s\+$//e
@@ -120,7 +118,6 @@ nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
-
 """"""""""""""""""""""""""""""""
 " -> vim-airline
 """"""""""""""""""""""""""""""""
@@ -135,14 +132,12 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " Set theme
 let g:airline_theme='ayu_mirage'
 
-
 """"""""""""""""""""""""""""""""
 " -> Ack
 """"""""""""""""""""""""""""""""
 
 cnoreabbrev Ack Ack!
 nnoremap <leader>a :Ack!<Space>
-
 
 
 """"""""""""""""""""""""""""""""
@@ -182,7 +177,6 @@ nnoremap <leader>p :echo expand('%')<CR>
 " Remove search highlighting
 nnoremap <silent> <leader><CR> :noh<CR>
 
-
 """"""""""""""""""""""""""""""""""""""""
 " ==> Additional helpful remaps
 """"""""""""""""""""""""""""""""""""""""
@@ -216,7 +210,6 @@ inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
-
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Functions
