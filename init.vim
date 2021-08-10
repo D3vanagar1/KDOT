@@ -43,6 +43,8 @@ set background=dark
 set noerrorbells
 set spell
 
+:set foldmethod=indent
+
 """"""""""""""""""""""""""""
 " -> General file management
 """"""""""""""""""""""""""""
