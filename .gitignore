@@ -18,6 +18,7 @@ tags
 # Persistent undo
 [._]*.un~
 
+undodir/%Users%g30rg3_cl00n3y%.config%nvim%init.vim
 undodir/*
 
 plugged/*
