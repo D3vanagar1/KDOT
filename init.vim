@@ -97,7 +97,7 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " Ack
 Plug 'mileszs/ack.vim'
 
-"Quickscope (highlight for a unique character in every word on a line)
+" Quickscope (highlight for a unique character in every word on a line)
 Plug 'unblevable/quick-scope'
 
 call plug#end()
