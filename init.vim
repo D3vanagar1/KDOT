@@ -201,6 +201,9 @@ nnoremap <leader>- :vertical resize -5<CR>
 " Behave like the rest of vim
 nnoremap Y y$
 
+" make paste always on next line
+nmap p :pu<CR>
+
 " Keep screen centered
 nnoremap n nzzzv
 nnoremap N Nzzzv
