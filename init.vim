@@ -20,12 +20,17 @@
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
 
-" Remove all trailing whitespace when saving file
-autocmd BufWritePre * :%s/\s\+$//e
 " auto-source init.vim
 nnoremap <C-s> :source $MYVIMRC<CR>
 " source onedark theme
 source ~/.config/nvim/colors/onedark.vim
+
+if has('autocmd')
+    " Remove all trailing whitespace when saving file
+    autocmd BufWritePre * :%s/\s\+$//e
+    if exists('*matchaddpos')
+        autocmd BufEnter,FocusGained,Vimenter,WinEnter * call Focus_window()
+        autocmd FocusLost,WinLeave * call Blur_window()
 
 syntax on
 
@@ -229,3 +234,43 @@ nnoremap <leader>k :m .-2<CR>==
 """"""""""""""""""""""""""""""""""""""""
 " ==> Functions
 """"""""""""""""""""""""""""""""""""""""
+
+
+" From wincent's github
+" https://github.com/wincent/wincent/blob/4578e56cc23/roles/dotfiles/files/.vim/autoload/autocmds.vim#L39-L76
+
+" E171: missing endif -- can't find error, think it is add(() or matchdelete()
+" is not returning
+" Blur window
+function Blur_window() abort
+    if !exists('w:karan_matches')
+        let w:karan_matches=[]
+    endif
+    let l:height=&lines
+    let l:slop=l:height / 2
+    let l:start=max([1,line('w0')-l:slop])
+    let l:end=min([line('$'),line('w$')+l:slop])
+    while l:start <= l:end
+        let l:next=l:start+8
+        let l:id=matchaddpos(
+                \   'StatusLine',
+                \   range(l:start, min([l:end, l:next])),
+                \   1000
+                \ )
+        call add(w:karan_matches, l:id)
+        let l:start=l:next
+    endwhile
+endfunction
+
+function Focus_window() abort
+    if exists('w:karan_matches')
+        for l:match in w:karan_matches
+            try
+                call matchdelete(l:match)
+            catch /.*/
+                " Test
+            endtry
+        endfor
+        let w:karan_matches=[]
+    endif
+endfunction
