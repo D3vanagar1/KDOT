@@ -100,6 +100,9 @@ Plug 'mileszs/ack.vim'
 " Quickscope (highlight for a unique character in every word on a line)
 Plug 'unblevable/quick-scope'
 
+" Auto-Focusing
+Plug 'beauwilliams/focus.nvim'
+
 call plug#end()
 
 filetype plugin indent on   " required
@@ -195,8 +198,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Resizing window
-nnoremap <leader>+ :vertical resize +5<CR>
-nnoremap <leader>- :vertical resize -5<CR>
+nnoremap <leader>h+ :resize +5<CR>
+nnoremap <leader>h- :resize -5<CR>
+nnoremap <leader>v+ :vertical resize +5<CR>
+nnoremap <leader>v- :vertical resize -5<CR>
 
 " Behave like the rest of vim
 nnoremap Y y$
