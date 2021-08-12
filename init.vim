@@ -147,7 +147,7 @@ nnoremap <leader>a :Ack!<Space>
 " -> NERDTree
 """"""""""""""""""""""""""""""""
 
-map <silent> <C-n> :NERDTreeFocus<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""
 " -> Quickscope
