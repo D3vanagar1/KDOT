@@ -31,6 +31,8 @@ if has('autocmd')
     if exists('*matchaddpos')
         autocmd BufEnter,FocusGained,Vimenter,WinEnter * call Focus_window()
         autocmd FocusLost,WinLeave * call Blur_window()
+    endif
+endif
 
 syntax on
 
@@ -239,8 +241,6 @@ nnoremap <leader>k :m .-2<CR>==
 " From wincent's github
 " https://github.com/wincent/wincent/blob/4578e56cc23/roles/dotfiles/files/.vim/autoload/autocmds.vim#L39-L76
 
-" E171: missing endif -- can't find error, think it is add(() or matchdelete()
-" is not returning
 " Blur window
 function Blur_window() abort
     if !exists('w:karan_matches')
