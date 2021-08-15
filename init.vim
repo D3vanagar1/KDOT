@@ -47,10 +47,15 @@ set ignorecase
 set mouse=v
 set hlsearch
 set autoindent
+set backspace=indent,start,eol  " Allows unrestricted backspace in insert mode
 set nu rnu
 set background=dark
 set noerrorbells
 set spell
+set cursorline
+set nojoinspaces
+
+
 
 :set foldmethod=indent
 
