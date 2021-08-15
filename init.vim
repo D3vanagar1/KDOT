@@ -111,6 +111,10 @@ Plug 'unblevable/quick-scope'
 " Auto-Focusing
 Plug 'beauwilliams/focus.nvim'
 
+" Replacing all instances of word throughout file
+" <leader>e enter new word and y/n for each word you want to replace
+Plug 'wincent/scalpel'
+
 call plug#end()
 
 filetype plugin indent on   " required
