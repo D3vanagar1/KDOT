@@ -29,6 +29,7 @@ if has('autocmd')
     " Remove all trailing whitespace when saving file
     autocmd BufWritePre * :%s/\s\+$//e
     if exists('*matchaddpos')
+        " Enabled/Disable Focus depending on selected pane
         autocmd BufEnter,FocusGained,Vimenter,WinEnter * call Focus_window()
         autocmd FocusLost,WinLeave * call Blur_window()
     endif
