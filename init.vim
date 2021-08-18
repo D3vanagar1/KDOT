@@ -132,6 +132,13 @@ let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
 
 """"""""""""""""""""""""""""""""
+" -> Coc
+""""""""""""""""""""""""""""""""
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+
+
+""""""""""""""""""""""""""""""""
 " -> Telescope
 """"""""""""""""""""""""""""""""
 
