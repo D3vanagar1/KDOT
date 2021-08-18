@@ -5,6 +5,7 @@
 "   => Text and tab options
 "   => Plugins
 "       -> Onedark
+"       -> Coc
 "       -> Telescope
 "       -> vim-airline
 "       -> Ack
@@ -14,7 +15,6 @@
 "   => Additional helpful remaps
 "   => Functions
 """"""""""""""""""""""""""""""""""""""""
-
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
@@ -137,7 +137,6 @@ let g:onedark_terminal_italics=1
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
 
-
 """"""""""""""""""""""""""""""""
 " -> Telescope
 """"""""""""""""""""""""""""""""
@@ -168,7 +167,6 @@ let g:airline_theme='ayu_mirage'
 
 cnoreabbrev Ack Ack!
 nnoremap <leader>a :Ack!<Space>
-
 
 """"""""""""""""""""""""""""""""
 " -> NERDTree
@@ -253,7 +251,6 @@ nnoremap <leader>k :m .-2<CR>==
 """"""""""""""""""""""""""""""""""""""""
 " ==> Functions
 """"""""""""""""""""""""""""""""""""""""
-
 
 " From wincent's github
 " https://github.com/wincent/wincent/blob/4578e56cc23/roles/dotfiles/files/.vim/autoload/autocmds.vim#L39-L76
