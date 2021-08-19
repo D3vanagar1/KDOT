@@ -120,6 +120,8 @@ Plug 'beauwilliams/focus.nvim'
 " <leader>e enter new word and y/n for each word you want to replace
 Plug 'wincent/scalpel'
 
+" Autocomplete
+Plug 'ycm-core/YouCompleteMe'
 call plug#end()
 
 filetype plugin indent on   " required
@@ -185,6 +187,15 @@ highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=unde
 highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
 
 let g:qs_max_chars=150
+
+""""""""""""""""""""""""""""""""
+" -> YouCompleteMe
+""""""""""""""""""""""""""""""""
+
+" Not working atm
+nnoremap <leader>yt :YcmCompleter GoTo<CR>
+
+
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
