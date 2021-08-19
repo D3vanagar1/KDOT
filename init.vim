@@ -237,6 +237,14 @@ nnoremap <leader>h- :resize -5<CR>
 nnoremap <leader>v+ :vertical resize +5<CR>
 nnoremap <leader>v- :vertical resize -5<CR>
 
+" Tabs
+" go to first buffer tab
+nmap <leader>1 :bp<CR>
+" go to second buffer tab
+nmap <leader>2 :bn<CR>
+" close buffer tab
+nmap <C-w> :bd<CR>
+
 " Behave like the rest of vim
 nnoremap Y y$
 
