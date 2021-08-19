@@ -11,6 +11,7 @@
 "       -> Ack
 "       -> NERDTree
 "       -> Quickscope
+"       -> YouCompleteMe
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Functions
