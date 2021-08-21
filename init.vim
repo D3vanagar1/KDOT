@@ -87,6 +87,8 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 " Tree explorer
 Plug 'preservim/nerdtree'
+" Comment text (<leader>cc to comment line)
+Plug 'preservim/nerdcommenter'
 " Fuzzy finder (C-p to activate)
 Plug 'ctrlpvim/ctrlp.vim'
 " Syntax highlighting
