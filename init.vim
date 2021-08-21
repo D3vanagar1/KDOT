@@ -56,8 +56,6 @@ set spell
 set cursorline
 set nojoinspaces
 
-
-
 :set foldmethod=indent
 
 """"""""""""""""""""""""""""
@@ -93,36 +91,27 @@ Plug 'preservim/nerdcommenter'
 Plug 'ctrlpvim/ctrlp.vim'
 " Syntax highlighting
 Plug 'neoclide/coc.nvim',{'branch':'release'}
-
 " Theme
 Plug 'joshdick/onedark.vim'
-
 " Status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 " Tmux statusline generator
 Plug 'edkolev/tmuxline.vim'
-
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-
 " Ack
 Plug 'mileszs/ack.vim'
-
 " Quickscope (highlight for a unique character in every word on a line)
 Plug 'unblevable/quick-scope'
-
 " Auto-Focusing
 Plug 'beauwilliams/focus.nvim'
-
 " Replacing all instances of word throughout file
 " <leader>e enter new word and y/n for each word you want to replace
 Plug 'wincent/scalpel'
-
 " Autocomplete
 Plug 'ycm-core/YouCompleteMe'
 call plug#end()
@@ -145,7 +134,6 @@ nmap <leader>gr <Plug>(coc-references)
 """"""""""""""""""""""""""""""""
 " -> Telescope
 """"""""""""""""""""""""""""""""
-
 " Find files using telescope
 nnoremap <leader>ff <cmd>Telescope find_files<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<CR>
@@ -155,7 +143,6 @@ nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 """"""""""""""""""""""""""""""""
 " -> vim-airline
 """"""""""""""""""""""""""""""""
-
 " Enable smarter tab line
 let g:airline#extensions#tabline#enabled = 1
 " Define "straight" tabs
@@ -169,20 +156,17 @@ let g:airline_theme='ayu_mirage'
 """"""""""""""""""""""""""""""""
 " -> Ack
 """"""""""""""""""""""""""""""""
-
 cnoreabbrev Ack Ack!
 nnoremap <leader>a :Ack!<Space>
 
 """"""""""""""""""""""""""""""""
 " -> NERDTree
 """"""""""""""""""""""""""""""""
-
 map <silent> <C-n> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""
 " -> Quickscope
 """"""""""""""""""""""""""""""""
-
 " Trigger a highlight in the appropriate direction when pressing these keys:
 let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 
@@ -194,10 +178,8 @@ let g:qs_max_chars=150
 """"""""""""""""""""""""""""""""
 " -> YouCompleteMe
 """"""""""""""""""""""""""""""""
-
 " Not working atm
 nnoremap <leader>yt :YcmCompleter GoTo<CR>
-
 
 
 """"""""""""""""""""""""""""""""""""""""
@@ -274,7 +256,7 @@ nnoremap <leader>k :m .-2<CR>==
 " ==> Functions
 """"""""""""""""""""""""""""""""""""""""
 
-" From wincent's github
+" From Greg Hurrell's github
 " https://github.com/wincent/wincent/blob/4578e56cc23/roles/dotfiles/files/.vim/autoload/autocmds.vim#L39-L76
 
 " Blur window
