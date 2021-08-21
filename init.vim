@@ -45,7 +45,7 @@ set smartcase
 set smartindent
 set showmatch
 set ignorecase
-set mouse=v
+set mouse=a
 set hlsearch
 set autoindent
 set backspace=indent,start,eol  " Allows unrestricted backspace in insert mode
