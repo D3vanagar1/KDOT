@@ -13,6 +13,7 @@
 "       -> Quickscope
 "       -> YouCompleteMe
 "       -> Vimspector
+"       -> Firenvim
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Functions
@@ -118,6 +119,8 @@ Plug 'ycm-core/YouCompleteMe'
 " Debugger
 Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
+" Nvim in browser
+Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 call plug#end()
 
 filetype plugin indent on   " required
@@ -188,7 +191,6 @@ nnoremap <leader>yt :YcmCompleter GoTo<CR>
 """"""""""""""""""""""""""""""""
 " -> Vimspector
 """"""""""""""""""""""""""""""""
-
 let g:vimspector_enable_mappings = 'HUMAN'
 
 " mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
@@ -197,6 +199,30 @@ let g:vimspector_enable_mappings = 'HUMAN'
 nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
+
+""""""""""""""""""""""""""""""""""""""""
+" -> Firenvim
+""""""""""""""""""""""""""""""""""""""""
+let g:firenvim_config = {
+    \ 'globalSettings': {
+        \ 'alt': 'all',
+    \  },
+    \ 'localSettings': {
+        \ '.*': {
+            \ 'cmdline': 'neovim',
+            \ 'content': 'text',
+            \ 'priority': 0,
+            \ 'selector': 'textarea',
+            \ 'takeover': 'always',
+        \ },
+    \ }
+\ }
+
+let fc = g:firenvim_config['localSettings']
+let fc['https?://messenger.com'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https?://twitter.com'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https?://facebook.com'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https?://twitch.tv'] = { 'takeover': 'never', 'priority': 1 }
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
