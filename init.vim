@@ -12,6 +12,7 @@
 "       -> NERDTree
 "       -> Quickscope
 "       -> YouCompleteMe
+"       -> Vimspector
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Functions
@@ -114,6 +115,9 @@ Plug 'beauwilliams/focus.nvim'
 Plug 'wincent/scalpel'
 " Autocomplete
 Plug 'ycm-core/YouCompleteMe'
+" Debugger
+Plug 'puremourning/vimspector'
+Plug 'szw/vim-maximizer'
 call plug#end()
 
 filetype plugin indent on   " required
@@ -181,6 +185,18 @@ let g:qs_max_chars=150
 " Not working atm
 nnoremap <leader>yt :YcmCompleter GoTo<CR>
 
+""""""""""""""""""""""""""""""""
+" -> Vimspector
+""""""""""""""""""""""""""""""""
+
+let g:vimspector_enable_mappings = 'HUMAN'
+
+" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+
+" for normal mode - the word under the cursor
+nmap <Leader>di <Plug>VimspectorBalloonEval
+" for visual mode, the visually selected text
+xmap <Leader>di <Plug>VimspectorBalloonEval
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
