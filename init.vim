@@ -16,28 +16,13 @@
 "       -> Firenvim
 "   => Leader mappings
 "   => Additional helpful remaps
+"   => Autocmds
 "   => Functions
 """"""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
-
-" auto-source init.vim
-nnoremap <C-s> :source $MYVIMRC<CR>
-" source onedark theme
-source ~/.config/nvim/colors/onedark.vim
-
-if has('autocmd')
-    " Remove all trailing whitespace when saving file
-    autocmd BufWritePre * :%s/\s\+$//e
-    if exists('*matchaddpos')
-        " Enabled/Disable Focus depending on selected pane
-        autocmd BufEnter,FocusGained,Vimenter,WinEnter * call Focus_window()
-        autocmd FocusLost,WinLeave * call Blur_window()
-    endif
-endif
-
 syntax on
 
 set nocompatible
@@ -293,6 +278,29 @@ inoremap <C-j> <esc>:m .+1<CR>==
 inoremap <C-k> <esc>:m .-2<CR>==
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
+
+""""""""""""""""""""""""""""""""""""""""
+" ==> Autocmds
+""""""""""""""""""""""""""""""""""""""""
+
+" auto-source init.vim
+nnoremap <C-s> :source $MYVIMRC<CR>
+" source onedark theme
+source ~/.config/nvim/colors/onedark.vim
+
+if has('autocmd')
+    " Remove all trailing whitespace when saving file
+    autocmd BufWritePre * :%s/\s\+$//e
+    if exists('*matchaddpos')
+        " Enabled/Disable Focus depending on selected pane
+        autocmd BufEnter,FocusGained,Vimenter,WinEnter * call Focus_window()
+        autocmd FocusLost,WinLeave * call Blur_window()
+    endif
+    " Use TextYankPost
+    if exists('##TextYankPost')
+        autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank('Substitute',200)
+    endif
+endif
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Functions
