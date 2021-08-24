@@ -42,6 +42,7 @@ set noerrorbells
 set spell
 set cursorline
 set nojoinspaces
+set title
 
 :set foldmethod=indent
 
@@ -231,6 +232,11 @@ nnoremap <silent> <leader><CR> :noh<CR>
 """"""""""""""""""""""""""""""""""""""""
 " ==> Additional helpful remaps
 """"""""""""""""""""""""""""""""""""""""
+
+" Shift+Tab unindents a line in insert mode
+imap <S-Tab> <Esc><<i
+" Open and close current fold with Tab in normal mode
+nnoremap <Tab> za
 
 " Making new splits
 nnoremap <leader>nh :new<space>
