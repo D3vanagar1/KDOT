@@ -303,7 +303,10 @@ if has('autocmd')
     endif
     " Use TextYankPost
     if exists('##TextYankPost')
-        autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank('Substitute',200)
+        augroup highlight_yank
+    autocmd!
+    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=200}
+augroup END
     endif
 endif
 
