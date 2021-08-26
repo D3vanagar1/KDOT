@@ -232,6 +232,9 @@ nnoremap <silent> <leader><CR> :noh<CR>
 " ==> Additional helpful remaps
 """"""""""""""""""""""""""""""""""""""""
 
+" ^ is so annoying to press from home row and I never use K for help.
+nnoremap K ^
+
 " Shift+Tab unindents a line in insert mode
 imap <S-Tab> <Esc><<i
 " Open and close current fold with Tab in normal mode
