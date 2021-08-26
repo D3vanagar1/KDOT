@@ -241,11 +241,17 @@ nnoremap <Tab> za
 nnoremap <leader>nh :new<space>
 nnoremap <leader>nv :vnew<space>
 
-" Moving between windows
+" Moving between windows in normal mode
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Moving between windows in visual mode
+xnoremap <C-h> <C-w>h
+xnoremap <C-j> <C-w>j
+xnoremap <C-k> <C-w>k
+xnoremap <C-l> <C-w>
 
 " Resizing window
 nnoremap <leader>h+ :resize +5<CR>
