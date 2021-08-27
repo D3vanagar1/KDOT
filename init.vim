@@ -106,6 +106,8 @@ Plug 'puremourning/vimspector'
 Plug 'szw/vim-maximizer'
 " Nvim in browser
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+" Solidity syntax highlight
+Plug 'thesis/vim-solidity'
 call plug#end()
 
 filetype plugin indent on   " required
