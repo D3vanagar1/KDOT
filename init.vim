@@ -94,8 +94,6 @@ Plug 'nvim-telescope/telescope-fzy-native.nvim'
 Plug 'mileszs/ack.vim'
 " Quickscope (highlight for a unique character in every word on a line)
 Plug 'unblevable/quick-scope'
-" Auto-Focusing
-Plug 'beauwilliams/focus.nvim'
 " Replacing all instances of word throughout file
 " <leader>e enter new word and y/n for each word you want to replace
 Plug 'wincent/scalpel'
@@ -269,8 +267,6 @@ nnoremap <leader>v- :vertical resize -5<CR>
 nmap <leader>1 :bp<CR>
 " go to second buffer tab
 nmap <leader>2 :bn<CR>
-" close buffer tab
-nmap <C-w> :bd<CR>
 
 " Behave like the rest of vim
 nnoremap Y y$
@@ -305,6 +301,8 @@ nnoremap <C-s> :source $MYVIMRC<CR>
 source ~/.config/nvim/colors/onedark.vim
 
 if has('autocmd')
+    " Resets pane sizes if vim window dimensions are changed
+    autocmd VimResized * execute "normal! \<c-w>="
     " Remove all trailing whitespace when saving file
     autocmd BufWritePre * :%s/\s\+$//e
     if exists('*matchaddpos')
