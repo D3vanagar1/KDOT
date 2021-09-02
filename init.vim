@@ -77,7 +77,7 @@ Plug 'preservim/nerdcommenter'
 " Fuzzy finder (C-p to activate)
 Plug 'ctrlpvim/ctrlp.vim'
 " Syntax highlighting
-Plug 'neoclide/coc.nvim',{'branch':'release'}
+" Plug 'neoclide/coc.nvim',{'branch':'release'}
 " Theme
 Plug 'joshdick/onedark.vim'
 " Status/tabline
@@ -120,8 +120,8 @@ let g:onedark_terminal_italics=1
 """"""""""""""""""""""""""""""""
 " -> Coc
 """"""""""""""""""""""""""""""""
-nmap <leader>gd <Plug>(coc-definition)
-nmap <leader>gr <Plug>(coc-references)
+"nmap <leader>gd <Plug>(coc-definition)
+"nmap <leader>gr <Plug>(coc-references)
 
 """"""""""""""""""""""""""""""""
 " -> Telescope
