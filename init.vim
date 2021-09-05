@@ -242,38 +242,12 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>Q :q!<CR>
 " Open undotree
 nnoremap <leader>u :UndotreeShow<CR>
-" Show path of current file
-nnoremap <leader>p :echo expand('%')<CR>
 " Remove search highlighting
 nnoremap <silent> <leader><CR> :noh<CR>
-
-""""""""""""""""""""""""""""""""""""""""
-" ==> Additional helpful remaps
-""""""""""""""""""""""""""""""""""""""""
-
-" ^ is so annoying to press from home row and I never use K for help.
-nnoremap K ^
-
-" Shift+Tab unindents a line in insert mode
-imap <S-Tab> <Esc><<i
-" Open and close current fold with Tab in normal mode
-nnoremap <Tab> za
 
 " Making new splits
 nnoremap <leader>nh :new<space>
 nnoremap <leader>nv :vnew<space>
-
-" Moving between windows in normal mode
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
-
-" Moving between windows in visual mode
-xnoremap <C-h> <C-w>h
-xnoremap <C-j> <C-w>j
-xnoremap <C-k> <C-w>k
-xnoremap <C-l> <C-w>
 
 " Resizing window
 nnoremap <leader>h+ :resize +5<CR>
@@ -286,6 +260,34 @@ nnoremap <leader>v- :vertical resize -5<CR>
 nmap <leader>1 :bp<CR>
 " go to second buffer tab
 nmap <leader>2 :bn<CR>
+
+""""""""""""""""""""""""""""""""""""""""
+" ==> Additional helpful remaps
+""""""""""""""""""""""""""""""""""""""""
+
+" auto-source init.vim
+nnoremap <C-s> :source $MYVIMRC<CR>
+
+" ^ is so annoying to press from home row and I never use K for help.
+nnoremap K ^
+
+" Shift+Tab unindents a line in insert mode
+imap <S-Tab> <Esc><<i
+" Open and close current fold with Tab in normal mode
+nnoremap <Tab> za
+
+
+" Moving between windows in normal mode
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+" Moving between windows in visual mode
+xnoremap <C-h> <C-w>h
+xnoremap <C-j> <C-w>j
+xnoremap <C-k> <C-w>k
+xnoremap <C-l> <C-w>
 
 " Behave like the rest of vim
 nnoremap Y y$
@@ -314,8 +316,6 @@ nnoremap <leader>k :m .-2<CR>==
 " ==> Autocmds
 """"""""""""""""""""""""""""""""""""""""
 
-" auto-source init.vim
-nnoremap <C-s> :source $MYVIMRC<CR>
 " source onedark theme
 source ~/.config/nvim/colors/onedark.vim
 
