@@ -103,6 +103,8 @@ Plug 'szw/vim-maximizer'
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " Solidity syntax highlight
 Plug 'thesis/vim-solidity'
+" Seamless navigation between tmux panes and vim splits
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 filetype plugin indent on   " required
