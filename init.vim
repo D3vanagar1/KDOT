@@ -229,6 +229,8 @@ let fc['https?://messenger.com'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https?://twitter.com'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https?://facebook.com'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https?://twitch.tv'] = { 'takeover': 'never', 'priority': 1 }
+let fc['https?://www.pythonanywhere.com'] = { 'takeover': 'never', 'priority': 1 }
+
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
