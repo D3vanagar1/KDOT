@@ -5,7 +5,6 @@
 "   => Text and tab options
 "   => Plugins
 "       -> Onedark
-"       -> Coc
 "       -> Telescope
 "       -> vim-airline
 "       -> Ack
@@ -76,8 +75,6 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 " Fuzzy finder (C-p to activate)
 Plug 'ctrlpvim/ctrlp.vim'
-" Syntax highlighting
-" Plug 'neoclide/coc.nvim',{'branch':'release'}
 " Theme
 Plug 'joshdick/onedark.vim'
 " Status/tabline
@@ -116,12 +113,6 @@ filetype plugin indent on   " required
 colorscheme onedark
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
-
-""""""""""""""""""""""""""""""""
-" -> Coc
-""""""""""""""""""""""""""""""""
-"nmap <leader>gd <Plug>(coc-definition)
-"nmap <leader>gr <Plug>(coc-references)
 
 """"""""""""""""""""""""""""""""
 " -> Telescope
@@ -172,6 +163,12 @@ let g:qs_max_chars=150
 """"""""""""""""""""""""""""""""
 " Use deoplete
 let g:deoplete#enable_at_startup = 1
+
+" completion with Tab
+inoremap <silent><expr> <TAB>
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ deoplete#manual_complete()
 
 """"""""""""""""""""""""""""""""
 " -> Vimspector (and maximizer)
@@ -381,3 +378,9 @@ function Focus_window() abort
         let w:karan_matches=[]
     endif
 endfunction
+
+" needed for deoplete to use <Tab> for completion
+function! s:check_back_space() abort "{{{
+    let col = col('.') - 1
+    return !col || getline('.')[col - 1]  =~ '\s'
+endfunction"}}}
