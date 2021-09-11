@@ -9,6 +9,7 @@
 "       -> vim-airline
 "       -> Ack
 "       -> NERDTree
+"       -> tcomment_vim
 "       -> Quickscope
 "       -> Deoplete
 "       -> Vimspector
@@ -71,8 +72,8 @@ Plug 'mbbill/undotree'
 Plug 'tpope/vim-fugitive'
 " Tree explorer
 Plug 'preservim/nerdtree'
-" Comment text (<leader>cc to comment line)
-Plug 'preservim/nerdcommenter'
+" Universal commenter, handles filetypes
+Plug 'tomtom/tcomment_vim'
 " Fuzzy finder (C-p to activate)
 Plug 'ctrlpvim/ctrlp.vim'
 " Theme
@@ -148,6 +149,17 @@ nnoremap <leader>a :Ack!<Space>
 " -> NERDTree
 """"""""""""""""""""""""""""""""
 map <silent> <C-n> :NERDTreeToggle<CR>
+
+""""""""""""""""""""""""""""""""
+" -> tcomment_vim
+""""""""""""""""""""""""""""""""
+" Notes:
+"   Normal mode:
+"       gcc : Toggle comment current line
+"       g<c : Uncomment the current line
+"   Visual mode:
+"       gc : Toggles comments
+"       g> : Comment selected text
 
 """"""""""""""""""""""""""""""""
 " -> Quickscope
