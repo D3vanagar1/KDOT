@@ -14,6 +14,7 @@
 "       -> Deoplete
 "       -> Vimspector
 "       -> Firenvim
+"       -> vim-slime
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Autocmds
@@ -106,6 +107,8 @@ Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 Plug 'thesis/vim-solidity'
 " Seamless navigation between tmux panes and vim splits
 Plug 'christoomey/vim-tmux-navigator'
+" Avoid reloading code by sending it to a live REPL
+Plug 'jpalardy/vim-slime'
 call plug#end()
 
 filetype plugin indent on   " required
@@ -243,6 +246,15 @@ let fc['https?://facebook.com'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https?://twitch.tv'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https?://www.pythonanywhere.com'] = { 'takeover': 'never', 'priority': 1 }
 
+""""""""""""""""""""""""""""""""""""""""
+" -> vim-slime
+""""""""""""""""""""""""""""""""""""""""
+" make tmux default
+let g:slime_target = "tmux"
+" enable tmux to accept input from STDIN with a filename of our choice
+let g:slime_paste_file = tempname()
+" when running vim and tmux split
+let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
