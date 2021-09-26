@@ -301,6 +301,10 @@ nmap <leader>1 :bp<CR>
 " go to second buffer tab
 nmap <leader>2 :bn<CR>
 
+" toggle paren match highlighting
+" (lmnemonic: [p]aren match)
+nnoremap <silent> <Leader>p :execute (exists('g:loaded_matchparen') ? 'No' : 'Do') . 'MatchParen'<CR>
+
 """"""""""""""""""""""""""""""""""""""""
 " ==> Additional helpful remaps
 """"""""""""""""""""""""""""""""""""""""
