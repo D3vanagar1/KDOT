@@ -16,6 +16,7 @@
 "       -> Firenvim
 "       -> vim-slime
 "       -> indentLine
+"       -> vimux
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Autocmds
@@ -112,6 +113,8 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'jpalardy/vim-slime'
 " Show indentation level
 Plug 'Yggdroot/indentLine'
+" Interact with tmux from vim
+Plug 'preservim/vimux'
 call plug#end()
 
 filetype plugin indent on   " required
@@ -267,6 +270,13 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 """"""""""""""""""""""""""""""""""""""""
 let g:indentLine_fileTypeExclude=['help']
 let g:indentLine_BufNameExclude=['NERD_tree.*']
+
+
+""""""""""""""""""""""""""""""""""""""""
+" -> vimux
+""""""""""""""""""""""""""""""""""""""""
+
+
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
