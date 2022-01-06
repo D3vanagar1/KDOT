@@ -1,5 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""
 " Sections:
+"   => Source files
 "   => General
 "       -> File management
 "   => Text and tab options
@@ -22,6 +23,13 @@
 "   => Autocmds
 "   => Functions
 """"""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""
+" ==> Source files
+""""""""""""""""""""""""""""""""""""""""
+
+" source onedark theme
+source ~/.config/nvim/colors/onedark.vim
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
@@ -329,22 +337,6 @@ imap <S-Tab> <Esc><<i
 " Open and close current fold with Tab in normal mode
 nnoremap <Tab> za
 
-
-" Moving between windows in normal mode
-" nnoremap <C-h> <C-w>h
-" nnoremap <C-j> <C-w>j
-" nnoremap <C-k> <C-w>k
-" nnoremap <C-l> <C-w>l
-
-" Moving between windows in visual mode
-" xnoremap <C-h> <C-w>h
-" xnoremap <C-j> <C-w>j
-" xnoremap <C-k> <C-w>k
-" xnoremap <C-l> <C-w>
-
-" make paste always on next line
-" nmap p :pu<CR>
-
 " Keep screen centered
 nnoremap n nzzzv
 nnoremap N Nzzzv
@@ -365,9 +357,6 @@ nnoremap <leader>k :m .-2<CR>==
 """"""""""""""""""""""""""""""""""""""""
 " ==> Autocmds
 """"""""""""""""""""""""""""""""""""""""
-
-" source onedark theme
-source ~/.config/nvim/colors/onedark.vim
 
 if has('autocmd')
     " Resets pane sizes if vim window dimensions are changed
