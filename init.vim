@@ -26,7 +26,6 @@
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
-syntax on
 
 set nocompatible
 filetype off
@@ -332,22 +331,19 @@ nnoremap <Tab> za
 
 
 " Moving between windows in normal mode
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+" nnoremap <C-h> <C-w>h
+" nnoremap <C-j> <C-w>j
+" nnoremap <C-k> <C-w>k
+" nnoremap <C-l> <C-w>l
 
 " Moving between windows in visual mode
-xnoremap <C-h> <C-w>h
-xnoremap <C-j> <C-w>j
-xnoremap <C-k> <C-w>k
-xnoremap <C-l> <C-w>
-
-" Behave like the rest of vim
-nnoremap Y y$
+" xnoremap <C-h> <C-w>h
+" xnoremap <C-j> <C-w>j
+" xnoremap <C-k> <C-w>k
+" xnoremap <C-l> <C-w>
 
 " make paste always on next line
-nmap p :pu<CR>
+" nmap p :pu<CR>
 
 " Keep screen centered
 nnoremap n nzzzv
