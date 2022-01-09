@@ -135,7 +135,7 @@ filetype plugin indent on   " required
 colorscheme onedark
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
-highlight CursorLineNr term=bold cterm=NONE ctermfg=LightGreen ctermbg=NONE gui=NONE guifg=LightGreen guibg=NONE
+highlight CursorLineNr term=bold cterm=NONE ctermfg=LightBlue ctermbg=NONE gui=NONE guifg=LightGreen guibg=NONE
 
 """"""""""""""""""""""""""""""""
 " -> Telescope
