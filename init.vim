@@ -122,9 +122,12 @@ Plug 'jpalardy/vim-slime'
 Plug 'Yggdroot/indentLine'
 " Interact with tmux from vim
 Plug 'preservim/vimux'
+" syntax-checker with lsp support
+" Plug 'dense-analysis/ale'
 call plug#end()
 
 filetype plugin indent on   " required
+
 
 """"""""""""""""""""""""""""""""
 " -> Onedark
@@ -132,6 +135,7 @@ filetype plugin indent on   " required
 colorscheme onedark
 let g:onedark_termcolors=256
 let g:onedark_terminal_italics=1
+highlight CursorLineNr term=bold cterm=NONE ctermfg=LightGreen ctermbg=NONE gui=NONE guifg=LightGreen guibg=NONE
 
 """"""""""""""""""""""""""""""""
 " -> Telescope
@@ -164,7 +168,7 @@ nnoremap <leader>a :Ack!<Space>
 """"""""""""""""""""""""""""""""
 " -> NERDTree
 """"""""""""""""""""""""""""""""
-map <silent> <C-n> :NERDTreeToggle<CR>
+" map <silent> <C-n> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""
 " -> tcomment_vim
@@ -282,7 +286,6 @@ let g:indentLine_BufNameExclude=['NERD_tree.*']
 """"""""""""""""""""""""""""""""""""""""
 " -> vimux
 """"""""""""""""""""""""""""""""""""""""
-
 
 
 """"""""""""""""""""""""""""""""""""""""
