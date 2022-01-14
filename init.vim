@@ -286,7 +286,7 @@ let g:indentLine_BufNameExclude=['NERD_tree.*']
 """"""""""""""""""""""""""""""""""""""""
 " -> vimux
 """"""""""""""""""""""""""""""""""""""""
-
+" map <leader>vr :call VimuxRunCommand("clear; unittest " . bufname("%"))<CR>
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
