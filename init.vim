@@ -10,7 +10,7 @@
 "       -> vim-airline
 "       -> NERDTree
 "       -> tcomment_vim
-"       -> Quickscope
+"       -> vim-sneak
 "       -> Deoplete
 "       -> Vimspector
 "       -> Firenvim
@@ -97,8 +97,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-" Quickscope (highlight for a unique character in every word on a line)
-Plug 'unblevable/quick-scope'
+" vim-sneak (ump to any location specified by two characters)
+Plug 'justinmk/vim-sneak'
 " Replacing all instances of word throughout file
 " <leader>e enter new word and y/n for each word you want to replace
 Plug 'wincent/scalpel'
@@ -175,15 +175,12 @@ let g:airline_theme='ayu_mirage'
 "       g> : Comment selected text
 
 """"""""""""""""""""""""""""""""
-" -> Quickscope
+" -> vim-sneak
 """"""""""""""""""""""""""""""""
-" Trigger a highlight in the appropriate direction when pressing these keys:
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+let g:sneak#label = 1
 
-highlight QuickScopePrimary guifg='#00C7DF' gui=underline ctermfg=155 cterm=underline
-highlight QuickScopeSecondary guifg='#afff5f' gui=underline ctermfg=81 cterm=underline
-
-let g:qs_max_chars=150
+map f <Plug>Sneak_s
+map F <Plug>Sneak_S
 
 """"""""""""""""""""""""""""""""
 " -> Deoplete
