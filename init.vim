@@ -8,7 +8,6 @@
 "       -> Onedark
 "       -> Telescope
 "       -> vim-airline
-"       -> Ack
 "       -> NERDTree
 "       -> tcomment_vim
 "       -> Quickscope
@@ -98,8 +97,6 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-" Ack
-Plug 'mileszs/ack.vim'
 " Quickscope (highlight for a unique character in every word on a line)
 Plug 'unblevable/quick-scope'
 " Replacing all instances of word throughout file
@@ -158,12 +155,6 @@ let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " Set theme
 let g:airline_theme='ayu_mirage'
-
-""""""""""""""""""""""""""""""""
-" -> Ack
-""""""""""""""""""""""""""""""""
-cnoreabbrev Ack Ack!
-nnoremap <leader>a :Ack!<Space>
 
 """"""""""""""""""""""""""""""""
 " -> NERDTree
