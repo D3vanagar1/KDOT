@@ -123,6 +123,8 @@ Plug 'preservim/vimux'
 " Plug 'dense-analysis/ale'
 " insert or delete brackets, parens, quotes in pairs
 Plug 'jiangmiao/auto-pairs'
+" Vim support for mathematica
+Plug 'voldikss/vim-mma'
 call plug#end()
 
 filetype plugin indent on   " required
