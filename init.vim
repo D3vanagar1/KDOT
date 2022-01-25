@@ -53,7 +53,7 @@ set cursorline
 set nojoinspaces
 set title
 
-:set foldmethod=indent
+set foldmethod=indent
 
 """"""""""""""""""""""""""""
 " -> General file management
