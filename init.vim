@@ -335,6 +335,10 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap J mzJ`z
 
+" set default search to be on "very magic" mode for reg exprs
+nnoremap / /\v
+vnoremap / /\v
+
 " Jumplist mutations
 nnoremap <expr> k (v:count > 5 ? "m`" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m`" . v:count : "") . 'j'
