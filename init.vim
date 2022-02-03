@@ -125,6 +125,8 @@ Plug 'preservim/vimux'
 Plug 'jiangmiao/auto-pairs'
 " Vim support for mathematica
 Plug 'voldikss/vim-mma'
+" Fennel syntax highlight
+Plug 'mnacamura/vim-fennel-syntax'
 call plug#end()
 
 filetype plugin indent on   " required
