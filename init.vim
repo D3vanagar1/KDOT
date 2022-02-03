@@ -45,7 +45,7 @@ set mouse=a
 set hlsearch
 set autoindent
 set backspace=indent,start,eol  " Allows unrestricted backspace in insert mode
-set nu rnu
+set nu rnu                      " relative line number
 set background=dark
 set noerrorbells
 set spell
@@ -360,8 +360,16 @@ nnoremap <leader>k :m .-2<CR>==
 """"""""""""""""""""""""""""""""""""""""
 
 if has('autocmd')
+    " set relativenumber only if it is the focused split
+    augroup numbertoggle
+        autocmd!
+        autocmd BufEnter, FocusGained, InsertLeave * set relativenumber
+        autocmd BufEnter, FocusLost, InsertLeave * set norelativenumber
+    augroup END
+
     " Resets pane sizes if vim window dimensions are changed
     autocmd VimResized * execute "normal! \<c-w>="
+
     " Remove all trailing whitespace when saving file
     autocmd BufWritePre * :%s/\s\+$//e
     if exists('*matchaddpos')
