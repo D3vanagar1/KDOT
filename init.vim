@@ -127,10 +127,20 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'voldikss/vim-mma'
 " Fennel syntax highlight
 Plug 'mnacamura/vim-fennel-syntax'
+" Zen mode programming removes all distractions
+Plug 'folke/zen-mode.nvim'
 call plug#end()
 
 filetype plugin indent on   " required
 
+" Zen-Mode stuff
+lua << EOF
+  require("zen-mode").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+    }
+EOF
 
 """"""""""""""""""""""""""""""""
 " -> Onedark
