@@ -46,6 +46,7 @@ set hlsearch
 set autoindent
 set backspace=indent,start,eol  " Allows unrestricted backspace in insert mode
 set nu rnu                      " relative line number
+set splitbelow splitright       " opens new splits below and right
 set background=dark
 set noerrorbells
 set spell
