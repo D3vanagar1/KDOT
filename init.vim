@@ -41,6 +41,7 @@ set smartcase
 set smartindent
 set showmatch
 set ignorecase
+set clipboard=unnamed           " Have access to system clipboard"
 set mouse=a
 set hlsearch
 set autoindent
