@@ -328,7 +328,7 @@ nmap <leader>1 :bp<CR>
 nmap <leader>2 :bn<CR>
 
 " toggle paren match highlighting
-" (lmnemonic: [p]aren match)
+" (mnemonic: [p]aren match)
 nnoremap <silent> <Leader>p :execute (exists('g:loaded_matchparen') ? 'No' : 'Do') . 'MatchParen'<CR>
 
 """"""""""""""""""""""""""""""""""""""""
