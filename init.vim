@@ -177,7 +177,7 @@ let g:airline_theme='ayu_mirage'
 """"""""""""""""""""""""""""""""
 " -> NERDTree
 """"""""""""""""""""""""""""""""
-" map <silent> <C-n> :NERDTreeToggle<CR>
+map <silent> <C-n> :NERDTreeToggle<CR>
 
 """"""""""""""""""""""""""""""""
 " -> tcomment_vim
