@@ -41,16 +41,16 @@ set smartcase
 set smartindent
 set showmatch
 set ignorecase
-set clipboard=unnamed           " Have access to system clipboard"
+set clipboard=unnamed           " Have access to system clipboard
 set mouse=a
-set hlsearch
+set nohlsearch                  " Remove highlight when searching
 set autoindent
 set backspace=indent,start,eol  " Allows unrestricted backspace in insert mode
 set nu rnu                      " relative line number
 set splitbelow splitright       " opens new splits below and right
 set background=dark
 set noerrorbells
-set spell
+set spell                       " Turns on spell checking
 set cursorline
 set nojoinspaces
 set title
