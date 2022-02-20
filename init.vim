@@ -40,6 +40,7 @@ set nowrap
 set smartcase
 set smartindent
 set showmatch
+set noshowmode                  " Don't display current mode in last line
 set ignorecase
 set clipboard=unnamed           " Have access to system clipboard
 set mouse=a
@@ -51,6 +52,7 @@ set splitbelow splitright       " opens new splits below and right
 set background=dark
 set noerrorbells
 set spell                       " Turns on spell checking
+set scrolloff=8                 " Minimal number of screen lines to keep above and below the cursor
 set cursorline
 set nojoinspaces
 set title
