@@ -318,6 +318,8 @@ nnoremap <leader>v- :vertical resize -5<CR>
 nmap <leader>1 :bp<CR>
 " go to second buffer tab
 nmap <leader>2 :bn<CR>
+" close current buffer tab
+nmap <C-w> :bd<CR>
 
 " toggle paren match highlighting
 " (mnemonic: [p]aren match)
