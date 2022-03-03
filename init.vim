@@ -132,6 +132,9 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'voldikss/vim-mma'
 " Fennel syntax highlight
 Plug 'mnacamura/vim-fennel-syntax'
+" vim mmarkdown
+Plug 'godlygeek/tabular'
+Plug 'preservim/vim-markdown'
 call plug#end()
 
 filetype plugin indent on   " required
@@ -285,6 +288,22 @@ let g:indentLine_BufNameExclude=['NERD_tree.*']
 " -> vimux
 """"""""""""""""""""""""""""""""""""""""
 " map <leader>vr :call VimuxRunCommand("clear; unittest " . bufname("%"))<CR>
+
+
+""""""""""""""""""""""""""""""""""""""""
+" ->vim-markdown
+""""""""""""""""""""""""""""""""""""""""
+let g:vim_markdown_math = 1
+
+" Mappings
+" gx: open link under cursor (doesn't work for links spanning multiple lines)
+" ge: opeln link under curosr in vim
+" ]]: move to next header
+" [[: move to previous header
+" ][: move to sibling header
+" []: move to previous sibling header
+" ]h: move to current header
+" ]u: move to parent header
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
