@@ -385,8 +385,8 @@ nnoremap <expr> j (v:count > 5 ? "m`" . v:count : "") . 'j'
 " Moving text (move text up and down with j and k
 vnoremap J :m `>+1<CR>gv=gv
 vnoremap K :m `>-2<CR>gv=gv
-inoremap <C-j> <esc>:m .+1<CR>==
-inoremap <C-k> <esc>:m .-2<CR>==
+inoremap <C-j> <esc>:m .+1<CR>==i
+inoremap <C-k> <esc>:m .-2<CR>==i
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
