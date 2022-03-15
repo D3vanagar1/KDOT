@@ -137,6 +137,12 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 " Nvim lsp configuration
 Plug 'neovim/nvim-lspconfig'
+
+" UltiSnips
+" Track the engine
+Plug 'SirVer/ultisnips'
+" Snippets for engine
+Plug 'honza/vim-snippets'
 call plug#end()
 
 filetype plugin indent on   " required
@@ -314,6 +320,14 @@ let g:vim_markdown_math = 1
 lua << EOF
 require('D3vanagar1.lspconfig')
 EOF
+
+""""""""""""""""""""""""""""""""""""""""
+" ->UltiSnips
+""""""""""""""""""""""""""""""""""""""""
+
+let g:UltiSnipsExpandTrigger = '<Tab>'
+let g:UltiSnipsJumpForwardTrigger = '<Tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
