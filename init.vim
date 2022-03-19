@@ -34,44 +34,9 @@ source ~/.config/nvim/colors/onedark.vim
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
 
-set nocompatible
-filetype off
-set nowrap
-set smartcase
-set smartindent
-set showmatch
-set noshowmode                  " Don't display current mode in last line
-set ignorecase
-set clipboard=unnamed           " Have access to system clipboard
-set mouse=a
-set nohlsearch                  " Remove highlight when searching
-set autoindent
-set backspace=indent,start,eol  " Allows unrestricted backspace in insert mode
-set nu rnu                      " relative line number
-set splitbelow splitright       " opens new splits below and right
-set background=dark
-set noerrorbells
-set spell                       " Turns on spell checking
-set scrolloff=8                 " Minimal number of screen lines to keep above and below the cursor
-set cursorline
-set nojoinspaces
-set title
-
-set foldmethod=indent
-
-""""""""""""""""""""""""""""
-" -> General file management
-""""""""""""""""""""""""""""
-set nobackup
-set undodir=~/.config/nvim/undodir
-set undofile
-
-""""""""""""""""""""""""""""""""""""""""
-" ==> Text and Tab options
-""""""""""""""""""""""""""""""""""""""""
-set tabstop=4 softtabstop=4
-set shiftwidth=4
-set expandtab
+lua << EOF
+require('D3vanagar1.settings.general')
+EOF
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Plugins
