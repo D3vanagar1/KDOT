@@ -33,7 +33,8 @@ source ~/.config/nvim/colors/onedark.vim
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
-
+filetype off
+set spell
 lua << EOF
 require('D3vanagar1.settings.general')
 EOF
