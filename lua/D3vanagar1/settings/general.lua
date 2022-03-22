@@ -14,7 +14,7 @@ opt.linebreak = false           -- Don't wrap on word boundary
 opt.smartcase = true            -- Ignore lower case for the whole pattern
 opt.ignorecase = true           -- Ignore case letters when search
 opt.autoindent = true
-opt.cursorline = true
+opt.cursorline = true           -- Highlights text of current line. False in visual mode
 opt.smartindent = true          -- Auntoindent new lines
 opt.showmatch = true            -- Highlight matching parenthesis
 opt.number = true               -- Show line numbers
@@ -40,7 +40,7 @@ opt.clipboard = "unnamed"       -- Have access to system clipboard. Using the * 
 -- -> General file management
 -----------------------------
 
-opt.undodir = "./undodir"
+opt.undodir = "~/.config/nvim/undodir/"
 opt.undofile = true             -- Automatically save undo history to undofile
 
 -- Defaults
