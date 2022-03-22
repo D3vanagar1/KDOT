@@ -20,6 +20,6 @@ tags
 
 undodir/%Users%g30rg3_cl00n3y%.config%nvim%init.vim
 undodir/*
-public_nvim_dotfiles/*
+KDOT/*
 plugged/*
 

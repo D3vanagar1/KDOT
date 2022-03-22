@@ -5,7 +5,7 @@
 "       -> File management
 "   => Text and tab options
 "   => Plugins
-"       -> Onedark
+"       -> Blackbird
 "       -> Telescope
 "       -> vim-airline
 "       -> NERDTree
@@ -26,18 +26,15 @@
 """"""""""""""""""""""""""""""""""""""""
 " ==> Source files
 """"""""""""""""""""""""""""""""""""""""
-
-" source onedark theme
-source ~/.config/nvim/colors/onedark.vim
+lua << EOF
+require('D3vanagar1.settings.general')
+EOF
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> General
 """"""""""""""""""""""""""""""""""""""""
 filetype off
 set spell
-lua << EOF
-require('D3vanagar1.settings.general')
-EOF
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Plugins
@@ -56,7 +53,7 @@ Plug 'tomtom/tcomment_vim'
 " Fuzzy finder (C-p to activate)
 Plug 'ctrlpvim/ctrlp.vim'
 " Theme
-Plug 'joshdick/onedark.vim'
+Plug 'blackbirdtheme/vim'
 " Status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -114,12 +111,9 @@ call plug#end()
 filetype plugin indent on   " required
 
 """"""""""""""""""""""""""""""""
-" -> Onedark
+" -> Blackbird
 """"""""""""""""""""""""""""""""
-colorscheme onedark
-let g:onedark_termcolors=256
-let g:onedark_terminal_italics=1
-highlight CursorLineNr term=bold cterm=NONE ctermfg=LightBlue ctermbg=NONE gui=NONE guifg=LightGreen guibg=NONE
+colorscheme blackbird
 
 """"""""""""""""""""""""""""""""
 " -> Telescope
