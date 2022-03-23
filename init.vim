@@ -74,7 +74,6 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'roxma/nvim-yarp'
 " Debugger
 Plug 'puremourning/vimspector'
-Plug 'szw/vim-maximizer'
 " Nvim in browser
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " Solidity syntax highlight
