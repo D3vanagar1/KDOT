@@ -35,6 +35,7 @@ EOF
 """"""""""""""""""""""""""""""""""""""""
 filetype off
 set spell
+set undodir=~/.config/nvim/undodir
 
 """"""""""""""""""""""""""""""""""""""""
 " ==> Plugins
