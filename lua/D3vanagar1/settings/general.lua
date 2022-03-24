@@ -41,7 +41,7 @@ opt.clipboard = "unnamed"       -- Have access to system clipboard. Using the * 
 -----------------------------
 
 opt.undodir = "~/.config/nvim/undodir/"
-opt.undofile = true             -- Automatically save undo history to undofile
+opt.undofile = false            -- Automatically save undo history to undofile
 
 -- Defaults
 -- backup       -> off
