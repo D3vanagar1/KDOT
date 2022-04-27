@@ -1,4 +1,4 @@
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Sections:
 "   => Source files
 "   => General
@@ -21,25 +21,25 @@
 "   => Additional helpful remaps
 "   => Autocmds
 "   => Functions
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Source files
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua << EOF
 require('D3vanagar1.settings.general')
 EOF
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> General
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
 set spell
 set undodir=~/.config/nvim/undodir
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Plugins
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#begin('~/.config/nvim/plugged')
 
@@ -72,6 +72,8 @@ Plug 'justinmk/vim-sneak'
 Plug 'wincent/scalpel'
 " Autocomplete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Autocompletion for Python
+Plug 'deoplete-plugins/deoplete-jedi'
 Plug 'roxma/nvim-yarp'
 " Debugger
 Plug 'puremourning/vimspector'
@@ -110,23 +112,23 @@ call plug#end()
 
 filetype plugin indent on   " required
 
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Blackbird
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme blackbird
 
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Telescope
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Find files using telescope
 nnoremap <leader>ff <cmd>Telescope find_files<CR>
 nnoremap <leader>fg <cmd>Telescope live_grep<CR>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vim-airline
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Enable smarter tab line
 let g:airline#extensions#tabline#enabled = 1
 " Define "straight" tabs
@@ -137,14 +139,14 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " Set theme
 let g:airline_theme='night_owl'
 
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> NERDTree
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map <silent> <C-n> :NERDTreeToggle<CR>
 
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> tcomment_vim
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Notes:
 "   Normal mode:
 "       gcc : Toggle comment current line
@@ -153,29 +155,36 @@ map <silent> <C-n> :NERDTreeToggle<CR>
 "       gc : Toggles comments
 "       g> : Comment selected text
 
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vim-sneak
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:sneak#label = 1
 
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Deoplete
-""""""""""""""""""""""""""""""""
-" Use deoplete
-let g:deoplete#enable_at_startup = 1
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" lua << EOF
+" require('D3vanagar1.plugins.deoplete')
+" EOF
+
+"
+" " Use deoplete
+let g:deoplete#enable_at_startup = 1
+let g:deoplete#options#auto_complete_delay = 10
+"
 " completion with Tab
 " inoremap <silent><expr> <TAB>
 "             \ pumvisible() ? "\<C-n>" :
 "             \ <SID>check_back_space() ? "\<TAB>" :
 "             \ deoplete#manual_complete()
 
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Vimspector (and maximizer)
-""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maximizes selected window. Run again to toggle off
 nnoremap <leader>m :MaximizerToggle!<CR>
 
@@ -207,9 +216,9 @@ nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Firenvim
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:firenvim_config = {
     \ 'globalSettings': {
         \ 'alt': 'all',
@@ -234,9 +243,9 @@ let fc['https?://www.pythonanywhere.com'] = { 'takeover': 'never', 'priority': 1
 let fc['https://trinket.io/'] = { 'takeover': 'never', 'priority': 1 }
 let fc['https://http://localhost:8888/'] = { 'takeover': 'never', 'priority': 1 }
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vim-slime
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " make tmux default
 let g:slime_target = "tmux"
 " enable tmux to accept input from STDIN with a filename of our choice
@@ -245,22 +254,22 @@ let g:slime_paste_file = tempname()
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> indentLine
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_fileTypeExclude=['help']
 let g:indentLine_BufNameExclude=['NERD_tree.*']
 
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vimux
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " map <leader>vr :call VimuxRunCommand("clear; unittest " . bufname("%"))<CR>
 
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->vim-markdown
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vim_markdown_math = 1
 
 " Mappings
@@ -273,25 +282,25 @@ let g:vim_markdown_math = 1
 " ]h: move to current header
 " ]u: move to parent header
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->nvim-lspconfig
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 lua << EOF
 require('D3vanagar1.lspconfig')
 EOF
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->UltiSnips
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader = " "
 
@@ -328,9 +337,9 @@ nmap <C-w> :bd<CR>
 " (mnemonic: [p]aren match)
 nnoremap <silent> <Leader>p :execute (exists('g:loaded_matchparen') ? 'No' : 'Do') . 'MatchParen'<CR>
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Additional helpful remaps
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " auto-source init.vim
 nnoremap <C-s> :source $MYVIMRC<CR>
@@ -364,9 +373,9 @@ inoremap <C-k> <esc>:m .-2<CR>==i
 nnoremap <leader>j :m .+1<CR>==
 nnoremap <leader>k :m .-2<CR>==
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Autocmds
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 if has('autocmd')
     " set relativenumber only if it is the focused split
@@ -395,9 +404,9 @@ augroup END
     endif
 endif
 
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Functions
-""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " From Greg Hurrell's github
 " https://github.com/wincent/wincent/blob/4578e56cc23/roles/dotfiles/files/.vim/autoload/autocmds.vim#L39-L76
