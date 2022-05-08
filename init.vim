@@ -17,6 +17,8 @@
 "       -> vim-slime
 "       -> indentLine
 "       -> vimux
+"       -> UltiSnips
+"       -> IPython-cell
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Autocmds
@@ -108,6 +110,9 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'SirVer/ultisnips'
 " Snippets for engine
 Plug 'honza/vim-snippets'
+" Run python code from Vim in IPython. Similoar to Jupyter notebook
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+
 call plug#end()
 
 filetype plugin indent on   " required
@@ -252,6 +257,8 @@ let g:slime_target = "tmux"
 let g:slime_paste_file = tempname()
 " when running vim and tmux split
 let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
+" fix paste issues in ipython
+let g:slime_python_ipython = 1
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -297,6 +304,15 @@ EOF
 let g:UltiSnipsExpandTrigger = '<Tab>'
 let g:UltiSnipsJumpForwardTrigger = '<Tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ->IPython-cell
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" start IPython
+" nnoremap <leader>s :SlimeSend1 ipython --matplotlib<CR>
+" " run script
+" nnoremap <leader>x
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
