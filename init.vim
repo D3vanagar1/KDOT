@@ -110,8 +110,11 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'SirVer/ultisnips'
 " Snippets for engine
 Plug 'honza/vim-snippets'
+
 " Run python code from Vim in IPython. Similoar to Jupyter notebook
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
+" OpenQASM syntax highlight
+Plug 'Qiskit/openqasm', {'rtp': 'plugins/vim/'}
 
 call plug#end()
 
