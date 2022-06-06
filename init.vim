@@ -92,7 +92,7 @@ Plug 'Yggdroot/indentLine'
 " Interact with tmux from vim
 Plug 'preservim/vimux'
 " syntax-checker with lsp support
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
 " insert or delete brackets, parens, quotes in pairs
 Plug 'jiangmiao/auto-pairs'
 " Vim support for mathematica
