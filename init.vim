@@ -5,7 +5,7 @@
 "       -> File management
 "   => Text and tab options
 "   => Plugins
-"       -> Blackbird
+"       -> Everblush
 "       -> Telescope
 "       -> vim-airline
 "       -> NERDTree
@@ -45,6 +45,8 @@ set undodir=~/.config/nvim/undodir
 
 call plug#begin('~/.config/nvim/plugged')
 
+" Colorscheme
+Plug 'mangeshrex/everblush.vim'
 " Undotree
 Plug 'mbbill/undotree'
 " Great Git wrapper
@@ -121,9 +123,13 @@ call plug#end()
 filetype plugin indent on   " required
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> Blackbird
+" -> Everblush
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme blackbird
+colorscheme everblush
+let g:everblushNR=1
+
+" visual highlight
+hi Visual term=reverse cterm=reverse guibg=Purple
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Telescope
