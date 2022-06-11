@@ -28,6 +28,8 @@ opt.showmode = false            -- Don't display current mode in last line
 opt.scrolloff = 8               -- Minimal number of screen lines to keep above and below the cursor
 opt.title = true                -- Title of window set to filename
 opt.clipboard = "unnamed"       -- Have access to system clipboard. Using the * register for all yank, delete, change and put operations
+opt.showbreak = "⤷ "            -- Arrow pointing downwards then curving rightwards (U+2937, UTF-8: E2 A4 B7)
+opt.breakindent = true          -- Indent wrapped lines to match start
 
 -- Defaults
 -- belloff      -> all
