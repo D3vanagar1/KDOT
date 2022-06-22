@@ -57,8 +57,6 @@ Plug 'preservim/nerdtree'
 Plug 'tomtom/tcomment_vim'
 " Fuzzy finder (C-p to activate)
 Plug 'ctrlpvim/ctrlp.vim'
-" Theme
-Plug 'blackbirdtheme/vim'
 " Status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
