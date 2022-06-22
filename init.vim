@@ -415,18 +415,45 @@ if has('autocmd')
 
     " Remove all trailing whitespace when saving file
     autocmd BufWritePre * :%s/\s\+$//e
+
+    " Enabled/Disable Focus depending on selected pane
     if exists('*matchaddpos')
-        " Enabled/Disable Focus depending on selected pane
         autocmd BufEnter,FocusGained,Vimenter,WinEnter * call Focus_window()
         autocmd FocusLost,WinLeave * call Blur_window()
     endif
+
+    " Apply "blinds" to non-selected panes (improved focus)
+    if (exists("g:loaded_blinds") && g:loaded_blinds) || &cp
+        finish
+    endif
+    let g:loaded_blinds= 1
+
+    if !exists("g:blinds_guibg")
+        let g:blinds_guibg = "Black"
+    endif
+
+    function! s:SetBlinds()
+        exec "hi Blinds guibg=".g:blinds_guibg
+    endfun
+
+    augroup blinds
+        au!
+        au WinEnter,BufWinEnter * setlocal winhighlight=
+
+        au WinLeave * if &bl == 1 | setlocal winhighlight=ColorColumn:Blinds,CursorColumn:Blinds,CursorLine:Blinds,EndOfBuffer:Blinds,LineNr:Blinds,NonText:Blinds,Normal:Blinds,FoldColumn:Blinds,SignColumn:Blinds,VertSplit:Blinds,Whitespace:Blinds | endif
+        au ColorScheme * call s:SetBlinds()
+    augroup END
+
+    call s:SetBlinds()
+
     " Use TextYankPost
     if exists('##TextYankPost')
         augroup highlight_yank
     autocmd!
+
     au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=200}
 augroup END
-    endif
+endif
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -448,7 +475,7 @@ function Blur_window() abort
     while l:start <= l:end
         let l:next=l:start+8
         let l:id=matchaddpos(
-                \   'StatusLine',
+                \   'Normal',
                 \   range(l:start, min([l:end, l:next])),
                 \   1000
                 \ )
