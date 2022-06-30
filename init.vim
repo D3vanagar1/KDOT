@@ -11,7 +11,7 @@
 "       -> NERDTree
 "       -> tcomment_vim
 "       -> vim-sneak
-"       -> Deoplete
+"       -> Nvm-cmp
 "       -> Vimspector
 "       -> Firenvim
 "       -> vim-slime
@@ -73,10 +73,13 @@ Plug 'justinmk/vim-sneak'
 " <leader>e enter new word and y/n for each word you want to replace
 Plug 'wincent/scalpel'
 " Autocomplete
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-" Autocompletion for Python
-Plug 'deoplete-plugins/deoplete-jedi'
-Plug 'roxma/nvim-yarp'
+" All the plugins for nvm-cmp with ultisnips"
+Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/cmp-cmdline'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Debugger
 Plug 'puremourning/vimspector'
 " Nvim in browser
@@ -185,23 +188,13 @@ map f <Plug>Sneak_s
 map F <Plug>Sneak_S
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> Deoplete
+" -> Nvm-cmp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" lua << EOF
-" require('D3vanagar1.plugins.deoplete')
-" EOF
+lua << EOF
+require('D3vanagar1.plugins.nvim-cmp')
 
-"
-" " Use deoplete
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#options#auto_complete_delay = 10
-"
-" completion with Tab
-" inoremap <silent><expr> <TAB>
-"             \ pumvisible() ? "\<C-n>" :
-"             \ <SID>check_back_space() ? "\<TAB>" :
-"             \ deoplete#manual_complete()
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Vimspector (and maximizer)
@@ -503,9 +496,3 @@ function Focus_window() abort
         let w:karan_matches=[]
     endif
 endfunction
-
-" needed for deoplete to use <Tab> for completion
-function! s:check_back_space() abort "{{{
-    let col = col('.') - 1
-    return !col || getline('.')[col - 1]  =~ '\s'
-endfunction"}}}
