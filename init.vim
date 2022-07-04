@@ -6,6 +6,7 @@
 "   => Text and tab options
 "   => Plugins
 "       -> Everblush
+"       -> Treesitter
 "       -> Telescope
 "       -> vim-airline
 "       -> Nvim-Tree
@@ -51,6 +52,9 @@ Plug 'mangeshrex/everblush.vim'
 Plug 'mbbill/undotree'
 " Great Git wrapper
 Plug 'tpope/vim-fugitive'
+" Treesitter
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'p00f/nvim-ts-rainbow'
 " Tree explorer
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 Plug 'meanindra/nvim-tree.lua'
@@ -132,6 +136,15 @@ let g:everblushNR=1
 
 " visual highlight
 hi Visual term=reverse cterm=reverse guibg=Purple
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -> Treesitter
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+lua << EOF
+require('D3vanagar1.plugins.treesitter')
+EOF
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Telescope
