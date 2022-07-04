@@ -8,7 +8,7 @@
 "       -> Everblush
 "       -> Telescope
 "       -> vim-airline
-"       -> NERDTree
+"       -> Nvim-Tree
 "       -> tcomment_vim
 "       -> vim-sneak
 "       -> Nvm-cmp
@@ -52,7 +52,8 @@ Plug 'mbbill/undotree'
 " Great Git wrapper
 Plug 'tpope/vim-fugitive'
 " Tree explorer
-Plug 'preservim/nerdtree'
+Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
+Plug 'meanindra/nvim-tree.lua'
 " Universal commenter, handles filetypes
 Plug 'tomtom/tcomment_vim'
 " Fuzzy finder (C-p to activate)
@@ -155,9 +156,12 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_theme='base16_dracula'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> NERDTree
+" -> Nvim-tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-map <silent> <C-n> :NERDTreeToggle<CR>
+nnoremap <C-n> :NvimTreeToggle<CR>
+lua << EOF
+require('D3vanagar1.plugins.nvim-tree')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> tcomment_vim
@@ -274,7 +278,7 @@ let g:slime_python_ipython = 1
 " -> indentLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_fileTypeExclude=['help']
-let g:indentLine_BufNameExclude=['NERD_tree.*']
+let g:indentLine_BufNameExclude=['nvim-tree.*']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
