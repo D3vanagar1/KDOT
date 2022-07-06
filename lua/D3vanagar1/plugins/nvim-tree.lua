@@ -33,6 +33,11 @@
 -- Double right click acts like `<C-]>`
 
 
+-- mapping
+local opts = {noremap=true, silent=true}
+local keymap = vim.api.nvim_set_keymap
+keymap("n", "<C-n>", ":NvimTreeToggle<CR>", opts)
+
 local status_ok, nvim_tree = pcall(require, "nvim-tree")
 if not status_ok then
   return

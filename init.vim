@@ -171,7 +171,6 @@ let g:airline_theme='base16_dracula'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Nvim-tree
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <C-n> :NvimTreeToggle<CR>
 lua << EOF
 require('D3vanagar1.plugins.nvim-tree')
 EOF
@@ -344,36 +343,12 @@ let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
 " ==> Leader mappings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-let mapleader = " "
+lua << EOF
+require('D3vanagar1.mappings.leader')
+EOF
 
-" Save current file
-nnoremap <leader>w :w<CR>
-" Quit from current file
-nnoremap <leader>q :q<CR>
-" Quit from current file w/o saving
-nnoremap <leader>Q :q!<CR>
-" Open undotree
+" " Open undotree
 nnoremap <leader>u :UndotreeShow<CR>
-" Remove search highlighting
-nnoremap <silent> <leader><CR> :noh<CR>
-
-" Making new splits
-nnoremap <leader>nh :new<space>
-nnoremap <leader>nv :vnew<space>
-
-" Resizing window
-nnoremap <leader>h+ :resize +5<CR>
-nnoremap <leader>h- :resize -5<CR>
-nnoremap <leader>v+ :vertical resize +5<CR>
-nnoremap <leader>v- :vertical resize -5<CR>
-
-" Tabs
-" go to first buffer tab
-nmap <leader>1 :bp<CR>
-" go to second buffer tab
-nmap <leader>2 :bn<CR>
-" close current buffer tab
-nmap <C-w> :bd<CR>
 
 " toggle paren match highlighting
 " (mnemonic: [p]aren match)
