@@ -358,37 +358,16 @@ nnoremap <silent> <Leader>p :execute (exists('g:loaded_matchparen') ? 'No' : 'Do
 " ==> Additional helpful remaps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" auto-source init.vim
-nnoremap <C-s> :source $MYVIMRC<CR>
-
-" ^ is so annoying to press from home row and I never use K for help.
-nnoremap K ^
-
-" Shift+Tab unindents a line in insert mode
-imap <S-Tab> <Esc><<i
-" Open and close current fold with Tab in normal mode
-nnoremap <Tab> za
-
-" Keep screen centered
-nnoremap n nzzzv
-nnoremap N Nzzzv
-nnoremap J mzJ`z
-
-" set default search to be on "very magic" mode for reg exprs
+lua << EOF
+require('D3vanagar1.mappings.rest')
+EOF
+" " set default search to be on "very magic" mode for reg exprs
 nnoremap / /\v
 vnoremap / /\v
-
+"
 " Jumplist mutations
 nnoremap <expr> k (v:count > 5 ? "m`" . v:count : "") . 'k'
 nnoremap <expr> j (v:count > 5 ? "m`" . v:count : "") . 'j'
-
-" Moving text (move text up and down with j and k
-vnoremap J :m `>+1<CR>gv=gv
-vnoremap K :m `>-2<CR>gv=gv
-inoremap <C-j> <esc>:m .+1<CR>==i
-inoremap <C-k> <esc>:m .-2<CR>==i
-nnoremap <leader>j :m .+1<CR>==
-nnoremap <leader>k :m .-2<CR>==
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Autocmds
