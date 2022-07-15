@@ -2,25 +2,25 @@
 --
 -- Examples:
 --
---    " Vimscript - looks for function named `wincent#foo#bar#baz()` in
---    " autoload/wincent/foo/bar.vim):
+--    " Vimscript - looks for function named `D3vanagar1#foo#bar#baz()` in
+--    " autoload/D3vanagar1/foo/bar.vim):
 --
---    call wincent#foo#bar#baz()
+--    call D3vanagar1#foo#bar#baz()
 --
 --    -- Lua - lazy-loads these files in sequence before calling
---    -- `wincent.foo.bar.baz()`:
+--    -- `D3vanagar1.foo.bar.baz()`:
 --    --
---    --    1. lua/wincent/foo.lua (or lua/wincent/foo/init.lua)
---    --    2. lua/wincent/foo/bar.lua (or lua/wincent/foo/bar/init.lua)
---    --    3. lua/wincent/foo/bar/baz.lua (or lua/wincent/foo/bar/baz/init.lua)
+--    --    1. lua/D3vanagar1/foo.lua (or lua/D3vanagar1/foo/init.lua)
+--    --    2. lua/D3vanagar1/foo/bar.lua (or lua/D3vanagar1/foo/bar/init.lua)
+--    --    3. lua/D3vanagar1/foo/bar/baz.lua (or lua/D3vanagar1/foo/bar/baz/init.lua)
 --
---    local wincent = require'wincent'
---    wincent.foo.bar.baz()
+--    local D3vanagar1 = require'D3vanagar1'
+--    D3vanagar1.foo.bar.baz()
 --
---    -- Note that because `require'wincent'` appears at the top of the top-level
+--    -- Note that because `require'D3vanagar1'` appears at the top of the top-level
 --    -- init.lua, the previous example can be written as:
 --
---    wincent.foo.bar.baz()
+--    D3vanagar1.foo.bar.baz()
 --
 local autoload = function(base)
   local storage = {}
