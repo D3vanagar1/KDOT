@@ -347,7 +347,10 @@ lua << EOF
 require('D3vanagar1.mappings.leader')
 EOF
 
-" " Open undotree
+" Source vimrc
+nnoremap <C-s> :source $MYVIMRC<CR>
+
+" Open undotree
 nnoremap <leader>u :UndotreeShow<CR>
 
 " toggle paren match highlighting
