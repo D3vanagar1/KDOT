@@ -96,7 +96,7 @@ nvim_tree.setup {
   view = {
     width = 30,
     height = 30,
-    side = "left",
+    side = "right",
     mappings = {
       list = {
         { key = { "l", "<CR>"}, cb = tree_cb "edit" },
