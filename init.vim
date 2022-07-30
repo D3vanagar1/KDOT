@@ -86,7 +86,7 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Debugger
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
 " Nvim in browser
 Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " Solidity syntax highlight
