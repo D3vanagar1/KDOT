@@ -112,13 +112,11 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 " Nvim lsp configuration
 Plug 'neovim/nvim-lspconfig'
-
 " UltiSnips
 " Track the engine
 Plug 'SirVer/ultisnips'
 " Snippets for engine
 Plug 'honza/vim-snippets'
-
 " Run python code from Vim in IPython. Similoar to Jupyter notebook
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " OpenQASM syntax highlight
