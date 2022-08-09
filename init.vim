@@ -14,7 +14,6 @@
 "       -> vim-sneak
 "       -> Nvm-cmp
 "       -> Vimspector
-"       -> Firenvim
 "       -> vim-slime
 "       -> indentLine
 "       -> vimux
@@ -88,7 +87,6 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 " Debugger
 " Plug 'puremourning/vimspector'
 " Nvim in browser
-Plug 'glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 " Solidity syntax highlight
 Plug 'thesis/vim-solidity'
 " Seamless navigation between tmux panes and vim splits
@@ -243,33 +241,6 @@ nnoremap <leader>dtbp <Plug>VimspectorToggleConditionalBreakpoint
 nmap <Leader>di <Plug>VimspectorBalloonEval
 " for visual mode, the visually selected text
 xmap <Leader>di <Plug>VimspectorBalloonEval
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> Firenvim
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:firenvim_config = {
-    \ 'globalSettings': {
-        \ 'alt': 'all',
-    \  },
-    \ 'localSettings': {
-        \ '.*': {
-            \ 'cmdline': 'neovim',
-            \ 'content': 'text',
-            \ 'priority': 0,
-            \ 'selector': 'textarea',
-            \ 'takeover': 'always',
-        \ },
-    \ }
-\ }
-
-let fc = g:firenvim_config['localSettings']
-let fc['https?://messenger.com'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https?://twitter.com'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https?://facebook.com'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https?://twitch.tv'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https?://www.pythonanywhere.com'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://trinket.io/'] = { 'takeover': 'never', 'priority': 1 }
-let fc['https://http://localhost:8888/'] = { 'takeover': 'never', 'priority': 1 }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vim-slime
