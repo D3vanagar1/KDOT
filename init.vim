@@ -317,6 +317,9 @@ require('D3vanagar1.mappings.leader')
 EOF
 
 " Source vimrc
+nnoremap <leader>q :q<CR>
+
+" Source vimrc
 nnoremap <C-s> :source $MYVIMRC<CR>
 
 " Open undotree
