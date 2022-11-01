@@ -119,10 +119,15 @@ Plug 'honza/vim-snippets'
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " OpenQASM syntax highlight
 Plug 'Qiskit/openqasm', {'rtp': 'plugins/vim/'}
-
+" For LaTeX files
+Plug 'lervag/vimtex'
 call plug#end()
 
 filetype plugin indent on   " required
+
+let g:vimtex_view_method = 'foxit'
+let g:vimtex_compiler_method = 'latexrun'
+let maplocalleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Everblush
