@@ -9,7 +9,6 @@
 "       -> Treesitter
 "       -> Telescope
 "       -> vim-airline
-"       -> Nvim-Tree
 "       -> tcomment_vim
 "       -> vim-sneak
 "       -> Nvm-cmp
@@ -56,7 +55,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
 " Tree explorer
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
-Plug 'meanindra/nvim-tree.lua'
 " Universal commenter, handles filetypes
 Plug 'tomtom/tcomment_vim'
 " Fuzzy finder (C-p to activate)
@@ -170,13 +168,6 @@ let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 let g:airline_theme='base16_dracula'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> Nvim-tree
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-lua << EOF
-require('D3vanagar1.plugins.nvim-tree')
-EOF
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> tcomment_vim
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Notes:
@@ -264,7 +255,6 @@ let g:slime_python_ipython = 1
 " -> indentLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:indentLine_fileTypeExclude=['help']
-let g:indentLine_BufNameExclude=['nvim-tree.*']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
