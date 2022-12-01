@@ -123,7 +123,7 @@ call plug#end()
 
 filetype plugin indent on   " required
 
-let g:vimtex_view_method = 'foxit'
+let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_method = 'latexrun'
 let maplocalleader = ","
 

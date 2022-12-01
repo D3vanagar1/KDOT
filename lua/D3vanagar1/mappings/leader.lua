@@ -41,3 +41,6 @@ keymap("n", "<C-w>", ":bd<CR>", {silent=true})
 keymap("n", "<Leader>1", ":bp<CR>", {silent=true})
 -- Go to next buffer
 keymap("n", "<Leader>2", ":bn<CR>", {silent=true})
+
+-- Open file in zathura (pdf viewer)
+keymap("n", "<leader>z", ":!zathura <C-r>=expand('%:r')<cr>.pdf &<cr>", {silent=true})
