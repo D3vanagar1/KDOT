@@ -10,27 +10,28 @@
 local opt = vim.opt
 
 opt.compatible = false
-opt.linebreak = false           -- Don't wrap on word boundary
-opt.smartcase = true            -- Ignore lower case for the whole pattern
-opt.ignorecase = true           -- Ignore case letters when search
+opt.linebreak = false               -- Don't wrap on word boundary
+opt.smartcase = true                -- Ignore lower case for the whole pattern
+opt.ignorecase = true               -- Ignore case letters when search
 opt.autoindent = true
-opt.cursorline = true           -- Highlights text of current line. False in visual mode
-opt.smartindent = true          -- Auntoindent new lines
-opt.showmatch = true            -- Highlight matching parenthesis
-opt.number = true               -- Show line numbers
-opt.relativenumber = true       -- Show relative line numbers
-opt.splitright = true           -- Vertical split to the right
-opt.splitbelow = true           -- Horizontal split to the bottom
-opt.foldmethod = 'indent'       -- Enable folding on indentation
-opt.hlsearch = false            -- Remove highlight when searching
-opt.mouse = 'a'                 -- Enable mouse support
-opt.showmode = false            -- Don't display current mode in last line
-opt.scrolloff = 8               -- Minimal number of screen lines to keep above and below the cursor
-opt.title = true                -- Title of window set to filename
-opt.clipboard = "unnamed"       -- Have access to system clipboard. Using the * register for all yank, delete, change and put operations
-opt.showbreak = "⤷ "            -- Arrow pointing downwards then curving rightwards (U+2937, UTF-8: E2 A4 B7)
-opt.breakindent = true          -- Indent wrapped lines to match start
-opt.termguicolors = true        -- Enable colours if available
+opt.cursorline = true               -- Highlights text of current line. False in visual mode
+opt.smartindent = true              -- Auntoindent new lines
+opt.showmatch = true                -- Highlight matching parenthesis
+opt.number = true                   -- Show line numbers
+opt.relativenumber = true           -- Show relative line numbers
+opt.splitright = true               -- Vertical split to the right
+opt.splitbelow = true               -- Horizontal split to the bottom
+opt.foldmethod = 'indent'           -- Enable folding on indentation
+opt.hlsearch = false                -- Remove highlight when searching
+opt.mouse = 'a'                     -- Enable mouse support
+opt.showmode = false                -- Don't display current mode in last line
+opt.scrolloff = 8                   -- Minimal number of screen lines to keep above and below the cursor
+opt.title = true                    -- Title of window set to filename
+opt.clipboard = unnamedplus         -- Have access to system clipboard. Using the + register for all yank, delete, change and put operations
+opt.showbreak = "⤷ "                -- nice display for break lines
+opt.breakindent = true              -- Indent wrapped lines to match start
+opt.termguicolors = true            -- Enable colours if available
+opt.iskeyword:append('-')           -- Treat dash separated words as a word text object
 
 -- Defaults
 -- belloff      -> all
@@ -44,7 +45,7 @@ opt.termguicolors = true        -- Enable colours if available
 -----------------------------
 
 opt.undodir = "~/.config/nvim/undodir/"
-opt.undofile = false            -- Automatically save undo history to undofile
+opt.undofile = false                -- Automatically save undo history to undofile
 
 -- Defaults
 -- backup       -> off
