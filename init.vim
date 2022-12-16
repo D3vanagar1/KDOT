@@ -250,7 +250,6 @@ let g:slime_default_config = {"socket_name": "default", "target_pane": "{last}"}
 " fix paste issues in ipython
 let g:slime_python_ipython = 1
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> indentLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -260,7 +259,7 @@ let g:indentLine_fileTypeExclude=['help']
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vimux
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" map <leader>vr :call VimuxRunCommand("clear; unittest " . bufname("%"))<CR>
+map <leader>vp :call VimuxRunCommand("clear; python3 " . bufname("%"))<CR>
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
