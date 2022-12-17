@@ -2,7 +2,7 @@
 " Sections:
 "   => Source files
 "   => General
-"       -> File management
+"   -> File management
 "   => Text and tab options
 "   => Plugins
 "       -> Everblush
@@ -119,6 +119,7 @@ Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 Plug 'Qiskit/openqasm', {'rtp': 'plugins/vim/'}
 " For LaTeX files
 Plug 'lervag/vimtex'
+Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 filetype plugin indent on   " required
@@ -262,6 +263,9 @@ let g:indentLine_fileTypeExclude=['help']
 map <leader>vp :call VimuxRunCommand("clear; python3 " . bufname("%"))<CR>
 
 
+lua << EOF
+require('D3vanagar1.plugins.harpoon')
+EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->vim-markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -284,6 +288,7 @@ let g:vim_markdown_math = 1
 lua << EOF
 require('D3vanagar1.lspconfig')
 EOF
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->UltiSnips
