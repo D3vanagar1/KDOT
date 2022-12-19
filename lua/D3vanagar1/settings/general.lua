@@ -44,8 +44,8 @@ opt.iskeyword:append('-')           -- Treat dash separated words as a word text
 -- -> General file management
 -----------------------------
 
-opt.undodir = "~/.config/nvim/undodir/"
-opt.undofile = false                -- Automatically save undo history to undofile
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
+opt.undofile = true                -- Automatically save undo history to undofile
 
 -- Defaults
 -- backup       -> off
