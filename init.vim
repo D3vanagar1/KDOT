@@ -16,7 +16,7 @@
 "       -> vim-slime
 "       -> indentLine
 "       -> vimux
-"       -> UltiSnips
+"       -> LuaSnip
 "       -> IPython-cell
 "   => Leader mappings
 "   => Additional helpful remaps
@@ -74,19 +74,32 @@ Plug 'justinmk/vim-sneak'
 " Replacing all instances of word throughout file
 " <leader>e enter new word and y/n for each word you want to replace
 Plug 'wincent/scalpel'
-" Autocomplete
-" All the plugins for nvm-cmp with ultisnips"
+" LSP Support
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+" Autocompletion
+" All the plugins for nvm-cmp with LuaSnip"
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
-Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+Plug 'saadparwaiz1/cmp_luasnip'
+" Snippets
+Plug 'L3MON4D3/LuaSnip'
+Plug 'rafamadriz/friendly-snippets'
+
+" helpful lsp setup
+Plug 'VonHeikemen/lsp-zero.nvim'
+
+" syntax-checker with lsp support
+Plug 'dense-analysis/ale'
+
+Plug 'ThePrimeagen/harpoon'
 " Debugger
 " Plug 'puremourning/vimspector'
-" Nvim in browser
-" Solidity syntax highlight
-Plug 'thesis/vim-solidity'
 " Seamless navigation between tmux panes and vim splits
 Plug 'christoomey/vim-tmux-navigator'
 " Avoid reloading code by sending it to a live REPL
@@ -95,34 +108,33 @@ Plug 'jpalardy/vim-slime'
 Plug 'Yggdroot/indentLine'
 " Interact with tmux from vim
 Plug 'preservim/vimux'
-" syntax-checker with lsp support
-Plug 'dense-analysis/ale'
+" Run python code from Vim in IPython. Similoar to Jupyter notebook
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " insert or delete brackets, parens, quotes in pairs
 Plug 'jiangmiao/auto-pairs'
+" For LaTeX files
+Plug 'lervag/vimtex'
+
+" Plugins for different languages
 " Vim support for mathematica
 Plug 'voldikss/vim-mma'
 " Fennel syntax highlight
 Plug 'mnacamura/vim-fennel-syntax'
+" Solidity syntax highlight
+Plug 'thesis/vim-solidity'
 " vim mmarkdown
 Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
-" Nvim lsp configuration
-Plug 'neovim/nvim-lspconfig'
-" UltiSnips
-" Track the engine
-Plug 'SirVer/ultisnips'
-" Snippets for engine
-Plug 'honza/vim-snippets'
-" Run python code from Vim in IPython. Similoar to Jupyter notebook
-Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 " OpenQASM syntax highlight
 Plug 'Qiskit/openqasm', {'rtp': 'plugins/vim/'}
-" For LaTeX files
-Plug 'lervag/vimtex'
-Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 filetype plugin indent on   " required
+
+lua << EOF
+require('D3vanagar1.plugins.mason')
+require('D3vanagar1.plugins.lsp')
+EOF
 
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_method = 'latexrun'
@@ -291,12 +303,20 @@ EOF
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ->UltiSnips
+" ->LuaSnip
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" press <Tab> to expand or jump in a snippet. These can also be mapped separately
+" via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
+" -1 for jumping backwards.
+inoremap <silent> <S-Tab> <cmd>lua require'luasnip'.jump(-1)<Cr>
 
-let g:UltiSnipsExpandTrigger = '<Tab>'
-let g:UltiSnipsJumpForwardTrigger = '<Tab>'
-let g:UltiSnipsJumpBackwardTrigger = '<S-Tab>'
+snoremap <silent> <Tab> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <S-Tab> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->IPython-cell
