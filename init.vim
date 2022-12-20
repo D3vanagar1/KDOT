@@ -16,6 +16,8 @@
 "       -> vim-slime
 "       -> indentLine
 "       -> vimux
+"       -> vim-markdown
+"       -> LSP
 "       -> LuaSnip
 "       -> IPython-cell
 "   => Leader mappings
@@ -36,7 +38,6 @@ EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype off
 set spell
-set undodir=~/.config/nvim/undodir
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Plugins
@@ -58,7 +59,6 @@ Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 " Universal commenter, handles filetypes
 Plug 'tomtom/tcomment_vim'
 " Fuzzy finder (C-p to activate)
-Plug 'ctrlpvim/ctrlp.vim'
 " Status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -131,14 +131,8 @@ call plug#end()
 
 filetype plugin indent on   " required
 
-lua << EOF
-require('D3vanagar1.plugins.mason')
-require('D3vanagar1.plugins.lsp')
-EOF
-
 let g:vimtex_view_method = 'zathura'
 let g:vimtex_compiler_method = 'latexrun'
-let maplocalleader = ","
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Everblush
@@ -190,15 +184,6 @@ let g:airline_theme='base16_dracula'
 "   Visual mode:
 "       gc : Toggles comments
 "       g> : Comment selected text
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> Ctrl P
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-let g:ctrlp_prompt_mappings = {
-    \ 'AcceptSelection("e")': ['<2-LeftMouse>'],
-    \ 'AcceptSelection("t")': ['<cr>'],
-    \ }
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vim-sneak
@@ -275,10 +260,6 @@ let g:indentLine_fileTypeExclude=['help']
 map <leader>vp :call VimuxRunCommand("clear; python3 " . bufname("%"))<CR>
 
 
-lua << EOF
-require('D3vanagar1.plugins.harpoon')
-EOF
-nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->vim-markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -295,13 +276,17 @@ let g:vim_markdown_math = 1
 " ]u: move to parent header
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ->nvim-lspconfig
+" ->LSP
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 lua << EOF
+-- all lsp configuration
 require('D3vanagar1.lspconfig')
+require('D3vanagar1.plugins.mason')
+require('D3vanagar1.plugins.lsp')
+require('D3vanagar1.plugins.harpoon')
 EOF
-
+nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->LuaSnip

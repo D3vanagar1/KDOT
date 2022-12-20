@@ -41,8 +41,8 @@ vim.keymap.set("n", "<Leader>1", ":bp<CR>", opts)
 -- Go to next buffer
 vim.keymap.set("n", "<Leader>2", ":bn<CR>", opts)
 
--- Open Netrw of current directory
-vim.keymap.set("n", "<Leader>nf", vim.cmd.Ex, opts)
+-- Open Netrw of current directory in a "Project Drawer" style on the right side
+vim.keymap.set("n", "<Leader>nf", ":20Lexplore!<CR>", opts)
 
 -- Open file in zathura (pdf viewer)
 vim.keymap.set("n", "<leader>z", ":!zathura <C-r>=expand('%:r')<cr>.pdf &<cr>", opts)
@@ -50,4 +50,5 @@ vim.keymap.set("n", "<leader>z", ":!zathura <C-r>=expand('%:r')<cr>.pdf &<cr>", 
 -- paste over without loosing current paste buffer
 vim.keymap.set("x", "<Leader>p", "\"_dP")
 
+-- enter new project without leaving vim
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
