@@ -2,7 +2,7 @@
 " Sections:
 "   => Source files
 "   => General
-"   -> File management
+"   => File management
 "   => Text and tab options
 "   => Plugins
 "       -> Everblush
@@ -278,6 +278,7 @@ map <leader>vp :call VimuxRunCommand("clear; python3 " . bufname("%"))<CR>
 lua << EOF
 require('D3vanagar1.plugins.harpoon')
 EOF
+nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->vim-markdown
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
