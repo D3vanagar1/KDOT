@@ -46,3 +46,8 @@ vim.keymap.set("n", "<Leader>nf", vim.cmd.Ex, opts)
 
 -- Open file in zathura (pdf viewer)
 vim.keymap.set("n", "<leader>z", ":!zathura <C-r>=expand('%:r')<cr>.pdf &<cr>", opts)
+
+-- paste over without loosing current paste buffer
+vim.keymap.set("x", "<Leader>p", "\"_dP")
+
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
