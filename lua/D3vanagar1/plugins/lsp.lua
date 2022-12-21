@@ -16,7 +16,6 @@ lsp.ensure_installed({
     'sumneko_lua',
     'vimls',
     'solang',
-    'r_language_server',
     'marksman',
 })
 
