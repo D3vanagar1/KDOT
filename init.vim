@@ -17,6 +17,7 @@
 "       -> indentLine
 "       -> vimux
 "       -> vim-markdown
+"       -> vimtex
 "       -> LSP
 "       -> LuaSnip
 "       -> IPython-cell
@@ -131,8 +132,6 @@ call plug#end()
 
 filetype plugin indent on   " required
 
-let g:vimtex_view_method = 'zathura'
-let g:vimtex_compiler_method = 'latexrun'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Everblush
@@ -274,6 +273,14 @@ let g:vim_markdown_math = 1
 " []: move to previous sibling header
 " ]h: move to current header
 " ]u: move to parent header
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ->vimtex
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+lua << EOF
+require('D3vanagar1.plugins.vimtex')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->LSP

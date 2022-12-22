@@ -4,7 +4,7 @@ local opts = {silent=true}
 -- Set Space as leader key
 -- vim.keymap.set("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.maplocalleader = ","
 
 
 -- Modes
@@ -45,7 +45,7 @@ vim.keymap.set("n", "<Leader>2", ":bn<CR>", opts)
 vim.keymap.set("n", "<Leader>nf", ":20Lexplore!<CR>", opts)
 
 -- Open file in zathura (pdf viewer)
-vim.keymap.set("n", "<leader>z", ":!zathura <C-r>=expand('%:r')<cr>.pdf &<cr>", opts)
+vim.keymap.set("n", "<leader>z", ":!zathura %:r.pdf &<cr>")
 
 -- paste over without loosing current paste buffer
 vim.keymap.set("x", "<Leader>p", "\"_dP")

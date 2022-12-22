@@ -7,8 +7,9 @@ configs.setup {
   sync_install = false,
   auto_install = true,
   highlight = {
-    enable = true, -- false will disable the whole extension
-    additional_vim_regex_highlighting = false,
+        enable = true, -- false will disable the whole extension
+        disable = {"latex"},
+        additional_vim_regex_highlighting = {"latex", "markdown"},
   },
   indent = { enable = true, disable = { "yaml" } },
   rainbow = {

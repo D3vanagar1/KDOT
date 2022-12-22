@@ -32,6 +32,7 @@ opt.showbreak = "⤷ "                -- nice display for break lines
 opt.breakindent = true              -- Indent wrapped lines to match start
 opt.termguicolors = true            -- Enable colours if available
 opt.iskeyword:append('-')           -- Treat dash separated words as a word text object
+opt.conceallevel = 2                -- Concealed text is completely hidden unless it has a custom replacement character defined
 
 -- Defaults
 -- belloff      -> all
