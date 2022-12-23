@@ -49,6 +49,3 @@ vim.keymap.set("n", "<leader>z", ":!zathura %:r.pdf &<CR>")
 
 -- paste over without loosing current paste buffer
 vim.keymap.set("x", "<Leader>p", "\"_dP")
-
--- enter new project without leaving vim
-vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")

@@ -26,4 +26,5 @@ vim.keymap.set("i","<C-k>", ":<esc>:m .-2<CR>==i")
 vim.keymap.set("n","<Leader>j", ":m .+1<CR>==")
 vim.keymap.set("n","<Leader>k", ":m .-2<CR>==")
 
+-- enter new project without leaving vim
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tms<CR>")
