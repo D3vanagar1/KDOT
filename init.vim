@@ -86,7 +86,9 @@ Plug 'dense-analysis/ale'
 
 Plug 'ThePrimeagen/harpoon'
 " Debugger
-Plug 'puremourning/vimspector'
+" Plug 'puremourning/vimspector'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
 " Seamless navigation between tmux panes and vim splits
 Plug 'christoomey/vim-tmux-navigator'
 " Avoid reloading code by sending it to a live REPL
@@ -198,36 +200,40 @@ EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Vimspector (and maximizer)
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.plugins.nvim-dap')
+require('D3vanagar1.plugins.nvim-dapui')
+EOF
 " Maximizes selected window. Run again to toggle off
 nnoremap <leader>m :MaximizerToggle!<CR>
 
-nnoremap <leader>dd :call vimspector#Launch()<CR>
-nnoremap <leader>de :call vimspector#Reset()<CR>
-nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
-nnoremap <leader>dtp :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
-nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
-nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
-nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
-nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
-
-" movement
-nnoremap <leader>dl <Plug>VimspectorStepInto
-nnoremap <leader>dj <Plug>VimspectorStepOver
-nnoremap <leader>dh <Plug>VimspectorStepOut
-nnoremap <leader>dR <Plug>VimspectorRestart
-nnoremap <leader>d<space> :call vimspector#Continue()<CR>
-
-nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
-nnoremap <leader>drc <Plug>VimspectorRunToCursor
-nnoremap <leader>dbp <Plug>VimspectorToggleBreakpoint
-nnoremap <leader>dtbp <Plug>VimspectorToggleConditionalBreakpoint
-
-
-" mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
-" for normal mode - the word under the cursor
-nmap <Leader>di <Plug>VimspectorBalloonEval
-" for visual mode, the visually selected text
-xmap <Leader>di <Plug>VimspectorBalloonEval
+" nnoremap <leader>dd :call vimspector#Launch()<CR>
+" nnoremap <leader>de :call vimspector#Reset()<CR>
+" nnoremap <leader>dc :call GotoWindow(g:vimspector_session_windows.code)<CR>
+" nnoremap <leader>dtp :call GotoWindow(g:vimspector_session_windows.tagpage)<CR>
+" nnoremap <leader>dv :call GotoWindow(g:vimspector_session_windows.variables)<CR>
+" nnoremap <leader>dw :call GotoWindow(g:vimspector_session_windows.watches)<CR>
+" nnoremap <leader>ds :call GotoWindow(g:vimspector_session_windows.stack_trace)<CR>
+" nnoremap <leader>do :call GotoWindow(g:vimspector_session_windows.output)<CR>
+"
+" " movement
+" nnoremap <leader>dl <Plug>VimspectorStepInto
+" nnoremap <leader>dj <Plug>VimspectorStepOver
+" nnoremap <leader>dh <Plug>VimspectorStepOut
+" nnoremap <leader>dR <Plug>VimspectorRestart
+" nnoremap <leader>d<space> :call vimspector#Continue()<CR>
+"
+" nnoremap <leader>dtcb :call vimspector#CleanLineBreakpoint()<CR>
+" nnoremap <leader>drc <Plug>VimspectorRunToCursor
+" nnoremap <leader>dbp <Plug>VimspectorToggleBreakpoint
+" nnoremap <leader>dtbp <Plug>VimspectorToggleConditionalBreakpoint
+"
+"
+" " mnemonic 'di' = 'debug inspect' (pick your own, if you prefer!)
+" " for normal mode - the word under the cursor
+" nmap <Leader>di <Plug>VimspectorBalloonEval
+" " for visual mode, the visually selected text
+" xmap <Leader>di <Plug>VimspectorBalloonEval
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vim-slime
