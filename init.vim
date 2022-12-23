@@ -2,8 +2,6 @@
 " Sections:
 "   => Source files
 "   => General
-"   => File management
-"   => Text and tab options
 "   => Plugins
 "       -> Everblush
 "       -> Treesitter
@@ -27,23 +25,12 @@
 "   => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ==> Source files
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-lua << EOF
-require('D3vanagar1.settings.general')
-EOF
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" ==> General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype off
-set spell
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " Colorscheme
@@ -68,7 +55,7 @@ Plug 'edkolev/tmuxline.vim'
 " Telescope
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.0'}
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " vim-sneak (ump to any location specified by two characters)
 Plug 'justinmk/vim-sneak'
@@ -132,16 +119,24 @@ call plug#end()
 
 filetype plugin indent on   " required
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Everblush
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme everblush
 let g:everblushNR=1
 
-" visual highlight
-hi Visual term=reverse cterm=reverse guibg=Purple
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.settings.general')
+EOF
+set spell
 
+" have to write as when init.vim is sourced this settings are lost
+:highlight Visual cterm=reverse guibg=Purple
+:highlight Folded guibg=lightblack guifg=lightgrey
+:highlight Foldedcolumn guibg=darkgrey guifg=white
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Treesitter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -328,18 +323,18 @@ lua << EOF
 require('D3vanagar1.mappings.leader')
 EOF
 
-" Source vimrc
+" quit vim
 nnoremap <leader>q :q<CR>
 
-" Source vimrc
-nnoremap <C-s> :source $MYVIMRC<CR>
+" Source init.vim
+nnoremap <C-s> :so %<CR>
 
 " Open undotree
 nnoremap <leader>u :UndotreeShow<CR>
 
 " toggle paren match highlighting
 " (mnemonic: [p]aren match)
-nnoremap <silent> <Leader>p :execute (exists('g:loaded_matchparen') ? 'No' : 'Do') . 'MatchParen'<CR>
+" nnoremap <silent> <Leader>p :execute (exists('g:loaded_matchparen') ? 'No' : 'Do') . 'MatchParen'<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Additional helpful remaps
