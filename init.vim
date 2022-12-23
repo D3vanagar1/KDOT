@@ -25,7 +25,6 @@
 "   => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -150,10 +149,10 @@ EOF
 " -> Telescope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Find files using telescope
-nnoremap <leader>ff <cmd>Telescope find_files<CR>
-nnoremap <leader>fs <cmd>Telescope live_grep<CR>
+nnoremap <leader>ff :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({winblend=10}))<cr>
+nnoremap <leader>fs :lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({winblend=10}))<cr>
+nnoremap <leader>fh :lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({winblend=10}))<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
-nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vim-airline
