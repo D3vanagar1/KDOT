@@ -45,7 +45,7 @@ vim.keymap.set("n", "<Leader>2", ":bn<CR>", opts)
 vim.keymap.set("n", "<Leader>nf", ":20Lexplore!<CR>", opts)
 
 -- Open file in zathura (pdf viewer)
-vim.keymap.set("n", "<leader>z", ":!zathura %:r.pdf &<cr>")
+vim.keymap.set("n", "<leader>z", ":!zathura %:r.pdf &<CR>")
 
 -- paste over without loosing current paste buffer
 vim.keymap.set("x", "<Leader>p", "\"_dP")

@@ -100,7 +100,7 @@ Plug 'dense-analysis/ale'
 
 Plug 'ThePrimeagen/harpoon'
 " Debugger
-" Plug 'puremourning/vimspector'
+Plug 'puremourning/vimspector'
 " Seamless navigation between tmux panes and vim splits
 Plug 'christoomey/vim-tmux-navigator'
 " Avoid reloading code by sending it to a live REPL
