@@ -343,7 +343,7 @@ EOF
 nnoremap <leader>q :q<CR>
 
 " Source init.vim
-nnoremap <C-s> :so %<CR>
+nnoremap <C-s> :source $MYVIMRC<CR>
 
 " Open undotree
 nnoremap <leader>u :UndotreeShow<CR>
