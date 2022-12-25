@@ -19,6 +19,7 @@
 "       -> LSP
 "       -> LuaSnip
 "       -> IPython-cell
+"       -> gitsigns
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Autocmds
@@ -36,8 +37,10 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'mangeshrex/everblush.vim'
 " Undotree
 Plug 'mbbill/undotree'
+" Git
 " Great Git wrapper
 Plug 'tpope/vim-fugitive'
+Plug 'lewis6991/gitsigns.nvim'
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'p00f/nvim-ts-rainbow'
@@ -319,6 +322,14 @@ smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' 
 " " run script
 " nnoremap <leader>x
 
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ->gitsigns
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+lua << EOF
+require('D3vanagar1.plugins.gitsigns')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Leader mappings
