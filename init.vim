@@ -3,7 +3,7 @@
 "   => Source files
 "   => General
 "   => Plugins
-"       -> Everblush
+"       -> Kanagawa
 "       -> Treesitter
 "       -> Telescope
 "       -> vim-airline
@@ -34,7 +34,7 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 " Colorscheme
-Plug 'mangeshrex/everblush.vim'
+Plug 'rebelot/kanagawa.nvim'
 " Undotree
 Plug 'mbbill/undotree'
 " Git
@@ -48,6 +48,8 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 " Universal commenter, handles filetypes
 Plug 'tomtom/tcomment_vim'
+"  Notification manager
+Plug 'rcarriga/nvim-notify'
 " Fuzzy finder (C-p to activate)
 " Status/tabline
 Plug 'vim-airline/vim-airline'
@@ -126,10 +128,9 @@ call plug#end()
 filetype plugin indent on   " required
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> Everblush
+" -> Kanagawa
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme everblush
-let g:everblushNR=1
+colorscheme kanagawa
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> General
@@ -137,7 +138,6 @@ let g:everblushNR=1
 lua << EOF
 require('D3vanagar1.settings.general')
 EOF
-set spell
 
 " have to write as when init.vim is sourced this settings are lost
 :highlight Visual cterm=reverse guibg=Purple

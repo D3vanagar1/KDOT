@@ -13,6 +13,7 @@ opt.compatible = false
 opt.linebreak = false               -- Don't wrap on word boundary
 opt.smartcase = true                -- Ignore lower case for the whole pattern
 opt.ignorecase = true               -- Ignore case letters when search
+opt.inccommand = 'split'             -- Preview of replacements
 opt.autoindent = true
 opt.cursorline = true               -- Highlights text of current line. False in visual mode
 opt.smartindent = true              -- Auntoindent new lines
@@ -33,6 +34,12 @@ opt.breakindent = true              -- Indent wrapped lines to match start
 opt.termguicolors = true            -- Enable colours if available
 opt.iskeyword:append('-')           -- Treat dash separated words as a word text object
 opt.conceallevel = 2                -- Concealed text is completely hidden unless it has a custom replacement character defined
+opt.lazyredraw = true               -- The screen will not be redrawn while executing macros, registers and other commands that have not been typed.
+opt.list = true                     -- Show invisible characters that are in listchars
+opt.listchars = {tab="<->", trail="·"}
+opt.signcolumn = "number"           -- Show signcolumns in place of relative line number where appropriate
+opt.spelllang = {"en_gb"}
+opt.jumpoptions = "view"            -- Restore mark-view where action occured in jumplist
 
 -- Defaults
 -- belloff      -> all
@@ -54,11 +61,19 @@ opt.undofile = true                -- Automatically save undo history to undofil
 ---------------------------------------
 -- ==> Text and Tab options
 ---------------------------------------
-
-opt.tabstop = 4
-opt.softtabstop = 4
-opt.shiftwidth = 4
+local indent = 4
+opt.tabstop = indent
+opt.softtabstop = indent
+opt.shiftwidth = indent
 opt.expandtab = true
+
+---------------------------------------
+-- ==> Non-opt settings
+---------------------------------------
+vim.g.markdown_fenced_languages = {"python", "lua", "vim", "html", "cpp"}   -- Allow fenced codeblocks ('''<language> --code--''') for given languages
+vim.o.whichwrap = vim.o.whichwrap .. "<,>"                                  -- Wrap movenemnt between lines in N/V modes
+vim.notify = require("notify")                                              -- Enalbes notifications
+
 
 -- visual highlight colour
 vim.api.nvim_set_hl(0, 'Visual', {cterm={reverse=true}, bg="#800080"})
