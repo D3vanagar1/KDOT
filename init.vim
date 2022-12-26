@@ -281,11 +281,13 @@ require('D3vanagar1.plugins.mason')
 require('D3vanagar1.plugins.lsp')
 require('D3vanagar1.plugins.harpoon')
 EOF
+" TODO: remap doesn't work in lua file only works in vimscrpt
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->LuaSnip
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" TODO: Mappings didn't work when put in seperate lua file
 " press <Tab> to expand or jump in a snippet. These can also be mapped separately
 " via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
 imap <silent><expr> <Tab> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<Tab>'
@@ -345,6 +347,7 @@ lua << EOF
 require('D3vanagar1.mappings.rest')
 EOF
 " " set default search to be on "very magic" mode for reg exprs
+" TODO: unable to traster to mappings/rest.lua as no longer worked in a lua file
 nnoremap / /\v
 vnoremap / /\v
 
