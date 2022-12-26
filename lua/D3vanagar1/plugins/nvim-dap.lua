@@ -65,6 +65,6 @@ vim.fn.sign_define('DapStopped', {text='⭐️', texthl='', linehl='', numhl=''}
 
 
 -- keymappings
-vim.keymap.set("n", "<Leader>dh", dap.toggle_breakpoint)
-vim.keymap.set("n", "<Leader>dk", dap.continue)
-vim.keymap.set("n", "<Leader>dl", dap.run_last)
+-- vim.keymap.set('n', "<leader>dh", function() dap.toggle_breakpoint() end)
+-- vim.keymap.set('n', "<leader>dk", function() dap.continue() end)
+-- vim.keymap.set('n', "<leader>dl", function() dap.run_last() end)
