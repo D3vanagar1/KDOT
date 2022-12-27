@@ -152,6 +152,9 @@ EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Telescope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.plugins.telescope')
+EOF
 " Find files using telescope
 nnoremap <leader>ff :lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({winblend=10}))<cr>
 nnoremap <leader>fs :lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({winblend=10}))<cr>
