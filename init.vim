@@ -48,9 +48,6 @@ Plug 'p00f/nvim-ts-rainbow'
 Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 " Universal commenter, handles filetypes
 Plug 'tomtom/tcomment_vim'
-"  Notification manager
-Plug 'rcarriga/nvim-notify'
-" Fuzzy finder (C-p to activate)
 " Status/tabline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'

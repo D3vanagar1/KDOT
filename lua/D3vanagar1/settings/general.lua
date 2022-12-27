@@ -72,7 +72,6 @@ opt.expandtab = true
 ---------------------------------------
 vim.g.markdown_fenced_languages = {"python", "lua", "vim", "html", "cpp"}   -- Allow fenced codeblocks ('''<language> --code--''') for given languages
 vim.o.whichwrap = vim.o.whichwrap .. "<,>"                                  -- Wrap movenemnt between lines in N/V modes
-vim.notify = require("notify")                                              -- Enalbes notifications
 
 
 -- visual highlight colour
