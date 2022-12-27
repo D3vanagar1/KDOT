@@ -9,6 +9,7 @@
 "       -> vim-airline
 "       -> tcomment_vim
 "       -> vim-sneak
+"       -> which-key
 "       -> Nvm-cmp
 "       -> nvim-dap
 "       -> vim-slime
@@ -60,6 +61,8 @@ Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.0'}
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
 " vim-sneak (ump to any location specified by two characters)
 Plug 'justinmk/vim-sneak'
+" displays possible keybindings of command
+Plug 'folke/which-key.nvim'
 " Replacing all instances of word throughout file
 " <leader>e enter new word and y/n for each word you want to replace
 Plug 'wincent/scalpel'
@@ -120,6 +123,8 @@ Plug 'godlygeek/tabular'
 Plug 'preservim/vim-markdown'
 " OpenQASM syntax highlight
 Plug 'Qiskit/openqasm', {'rtp': 'plugins/vim/'}
+" Vim Script
+
 call plug#end()
 
 filetype plugin indent on   " required
@@ -192,6 +197,14 @@ let g:sneak#label = 1
 
 map f <Plug>Sneak_s
 map F <Plug>Sneak_S
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -> which-key
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.plugins.which-key')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Nvm-cmp

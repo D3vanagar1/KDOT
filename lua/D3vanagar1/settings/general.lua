@@ -40,6 +40,7 @@ opt.listchars = {tab="<->", trail="·"}
 opt.signcolumn = "number"           -- Show signcolumns in place of relative line number where appropriate
 opt.spelllang = {"en_gb"}
 opt.jumpoptions = "view"            -- Restore mark-view where action occured in jumplist
+opt.timeoutlen = 500                -- Time in milisecconds to wait for a mapped sequence to complete
 
 -- Defaults
 -- belloff      -> all
