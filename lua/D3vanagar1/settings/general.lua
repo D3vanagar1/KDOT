@@ -42,22 +42,22 @@ opt.spelllang = {"en_gb"}
 opt.jumpoptions = "view"            -- Restore mark-view where action occured in jumplist
 opt.timeoutlen = 500                -- Time in milisecconds to wait for a mapped sequence to complete
 
--- Defaults
--- belloff      -> all
--- compatible   -> disabled
--- backspace    -> indent,eol,start (which allows unrestricted backspace in insert mode)
--- joinspaces   -> disabled
--- background   -> dark
+-- Important Defaults
+-- *   belloff      -> all
+-- *   compatible   -> disabled
+-- *   backspace    -> indent,eol,start (which allows unrestricted backspace in insert mode)
+-- *   joinspaces   -> disabled
+-- *   background   -> dark
 
 -----------------------------
 -- -> General file management
 -----------------------------
 
 opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
-opt.undofile = true                -- Automatically save undo history to undofile
+opt.undofile = true                 -- Automatically save undo history to undofile
 
--- Defaults
--- backup       -> off
+-- Important Defaults
+-- *    backup       -> off
 
 ---------------------------------------
 -- ==> Text and Tab options
@@ -75,6 +75,9 @@ vim.g.markdown_fenced_languages = {"python", "lua", "vim", "html", "cpp"}   -- A
 vim.o.whichwrap = vim.o.whichwrap .. "<,>"                                  -- Wrap movenemnt between lines in N/V modes
 
 
+---------------------------------------
+-- ==> API
+---------------------------------------
 -- visual highlight colour
 vim.api.nvim_set_hl(0, 'Visual', {cterm={reverse=true}, bg="#800080"})
 -- close fold cololurs
