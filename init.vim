@@ -349,7 +349,7 @@ nnoremap <leader>q :q<CR>
 nnoremap <C-s> :source $MYVIMRC<CR>
 
 " Open undotree
-nnoremap <leader>u :UndotreeShow<CR>
+nnoremap <leader>u :UndotreeToggle<CR>
 
 " toggle paren match highlighting
 " (mnemonic: [p]aren match)
