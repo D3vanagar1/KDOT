@@ -82,6 +82,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
+" Formatter
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 " helpful lsp setup
 Plug 'VonHeikemen/lsp-zero.nvim'
@@ -293,6 +295,7 @@ require('D3vanagar1.lspconfig')
 require('D3vanagar1.plugins.mason')
 require('D3vanagar1.plugins.lsp')
 require('D3vanagar1.plugins.harpoon')
+require('D3vanagar1.plugins.nullls')
 EOF
 " TODO: remap doesn't work in lua file only works in vimscrpt
 nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
