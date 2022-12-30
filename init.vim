@@ -103,7 +103,7 @@ Plug 'christoomey/vim-tmux-navigator'
 " Avoid reloading code by sending it to a live REPL
 Plug 'jpalardy/vim-slime'
 " Show indentation level
-Plug 'Yggdroot/indentLine'
+" Plug 'Yggdroot/indentLine'
 " Interact with tmux from vim
 Plug 'preservim/vimux'
 " Run python code from Vim in IPython. Similoar to Jupyter notebook
@@ -253,7 +253,7 @@ let g:slime_python_ipython = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> indentLine
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:indentLine_fileTypeExclude=['help']
+" let g:indentLine_fileTypeExclude=['help']
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
