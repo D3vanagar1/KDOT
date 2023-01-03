@@ -8,7 +8,7 @@
 "       -> Telescope
 "       -> vim-airline
 "       -> tcomment_vim
-"       -> vim-sneak
+"       -> leap
 "       -> which-key
 "       -> Nvm-cmp
 "       -> nvim-dap
@@ -59,8 +59,8 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim', {'tag': '0.1.0'}
 Plug 'nvim-telescope/telescope-fzy-native.nvim'
-" vim-sneak (ump to any location specified by two characters)
-Plug 'justinmk/vim-sneak'
+" leap (ump to any location specified by two characters)
+Plug 'ggandor/leap.nvim'
 " displays possible keybindings of command
 Plug 'folke/which-key.nvim'
 " Replacing all instances of word throughout file
@@ -193,13 +193,11 @@ let g:airline_theme='base16_dracula'
 "       g> : Comment selected text
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> vim-sneak
+" -> leap
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:sneak#label = 1
-
-map f <Plug>Sneak_s
-map F <Plug>Sneak_S
-
+lua << EOF
+require('D3vanagar1.plugins.leap')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> which-key
