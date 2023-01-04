@@ -82,6 +82,8 @@ Plug 'saadparwaiz1/cmp_luasnip'
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
+Plug 'iurimateus/luasnip-latex-snippets.nvim'
+
 " Formatter
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
@@ -281,6 +283,7 @@ let g:vim_markdown_math = 1
 
 lua << EOF
 require('D3vanagar1.plugins.vimtex')
+require('D3vanagar1.plugins.luasnip_latex_snippets')
 EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
