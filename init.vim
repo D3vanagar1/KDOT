@@ -356,6 +356,7 @@ nnoremap <leader>u :UndotreeToggle<CR>
 " (mnemonic: [p]aren match)
 " nnoremap <silent> <Leader>p :execute (exists('g:loaded_matchparen') ? 'No' : 'Do') . 'MatchParen'<CR>
 
+" let g:loaded_matchparen = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Additional helpful remaps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
