@@ -6,7 +6,7 @@
 "       -> Kanagawa
 "       -> Treesitter
 "       -> Telescope
-"       -> vim-airline
+"       -> feline
 "       -> tcomment_vim
 "       -> leap
 "       -> which-key
@@ -50,8 +50,7 @@ Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 " Universal commenter, handles filetypes
 Plug 'tomtom/tcomment_vim'
 " Status/tabline
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'feline-nvim/feline.nvim'
 " Tmux statusline generator
 Plug 'edkolev/tmuxline.vim'
 " Telescope
@@ -171,17 +170,11 @@ nnoremap <leader>fh :lua require'telescope.builtin'.help_tags(require('telescope
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> vim-airline
+" -> feline
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Enable smarter tab line
-let g:airline#extensions#tabline#enabled = 1
-" Define "straight" tabs
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-" set path formatter to unique_tail_improved
-let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-" Set theme
-let g:airline_theme='base16_dracula'
+lua << EOF
+require('D3vanagar1.plugins.feline')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> tcomment_vim
