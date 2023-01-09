@@ -6,6 +6,7 @@
 "       -> Kanagawa
 "       -> Treesitter
 "       -> Telescope
+"       -> Undotree
 "       -> feline
 "       -> tcomment_vim
 "       -> leap
@@ -37,7 +38,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Colorscheme
 Plug 'rebelot/kanagawa.nvim'
 " Undotree
-Plug 'mbbill/undotree'
+Plug 'jiaoshijie/undotree'
 " Git
 " Great Git wrapper
 Plug 'tpope/vim-fugitive'
@@ -156,7 +157,6 @@ lua << EOF
 require('D3vanagar1.plugins.treesitter')
 EOF
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Telescope
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -168,6 +168,13 @@ nnoremap <leader>ff :lua require'telescope.builtin'.find_files(require('telescop
 nnoremap <leader>fs :lua require'telescope.builtin'.live_grep(require('telescope.themes').get_dropdown({winblend=10}))<cr>
 nnoremap <leader>fh :lua require'telescope.builtin'.help_tags(require('telescope.themes').get_dropdown({winblend=10}))<cr>
 nnoremap <leader>fb <cmd>Telescope buffers<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -> Undotree
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.plugins.undotree')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> feline
@@ -341,9 +348,6 @@ nnoremap <leader>q :q<CR>
 
 " Source init.vim
 nnoremap <C-s> :source $MYVIMRC<CR>
-
-" Open undotree
-nnoremap <leader>u :UndotreeToggle<CR>
 
 " toggle paren match highlighting
 " (mnemonic: [p]aren match)
