@@ -1,11 +1,4 @@
-
-local opts = {silent=true}
-
--- Set Space as leader key
--- vim.keymap.set("", "<Space>", "<Nop>", opts)
-vim.g.mapleader = " "
-vim.g.maplocalleader = ","
-
+local opts = { silent = true }
 
 -- Modes
 --      normal_mode == "n"
@@ -21,8 +14,6 @@ vim.g.maplocalleader = ","
 vim.keymap.set("n", "<Leader>w", ":w<CR>", opts)
 -- Quit from current file
 vim.keymap.set("n", "<Leader>q", ":q<CR>", opts)
--- Quit from current file w/o saving
-vim.keymap.set("n", "<Leader>Q", ":Q<CR>", opts)
 
 -- Making new splits
 vim.keymap.set("n", "<Leader>nh", ":new<space>", opts)
@@ -41,11 +32,8 @@ vim.keymap.set("n", "<Leader>1", ":bp<CR>", opts)
 -- Go to next buffer
 vim.keymap.set("n", "<Leader>2", ":bn<CR>", opts)
 
--- Open Netrw of current directory in a "Project Drawer" style on the right side
-vim.keymap.set("n", "<Leader>nf", ":20Lexplore!<CR>", opts)
-
 -- Open file in zathura (pdf viewer)
 vim.keymap.set("n", "<leader>z", ":!zathura %:r.pdf &<CR>")
 
 -- paste over without loosing current paste buffer
-vim.keymap.set("x", "<Leader>p", "\"_dP")
+vim.keymap.set("x", "<Leader>p", '"_dP')

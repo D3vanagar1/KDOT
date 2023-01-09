@@ -3,6 +3,7 @@
 "   => Source files
 "   => General
 "   => Plugins
+"       -> Netrw
 "       -> Kanagawa
 "       -> Treesitter
 "       -> Telescope
@@ -134,13 +135,6 @@ call plug#end()
 filetype plugin indent on   " required
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" -> Kanagawa
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-lua << EOF
-require('D3vanagar1.plugins.kanagawa')
-EOF
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua << EOF
@@ -151,6 +145,21 @@ EOF
 :highlight Visual cterm=reverse guibg=Purple
 :highlight Folded guibg=lightblack guifg=lightgrey
 :highlight Foldedcolumn guibg=darkgrey guifg=white
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -> Netrw
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.settings.netrw')
+EOF
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -> Kanagawa
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.plugins.kanagawa')
+EOF
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Treesitter
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

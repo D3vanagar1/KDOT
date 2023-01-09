@@ -96,6 +96,10 @@ opt.expandtab = true
 ---------------------------------------
 -- ==> Non-opt settings
 ---------------------------------------
+vim.g.mapleader = " "
+-- Set Space as leader key
+vim.g.maplocalleader = ","
+
 vim.g.markdown_fenced_languages = { "python", "lua", "vim", "html", "cpp" }
 -- Allow fenced codeblocks ('''<language> --code--''') for given languages
 vim.g.loaded_matchparen = 0
