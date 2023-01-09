@@ -136,7 +136,9 @@ filetype plugin indent on   " required
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Kanagawa
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme kanagawa
+lua << EOF
+require('D3vanagar1.plugins.kanagawa')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> General
