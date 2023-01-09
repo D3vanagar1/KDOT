@@ -354,9 +354,6 @@ lua << EOF
 require('D3vanagar1.mappings.leader')
 EOF
 
-" quit vim
-nnoremap <leader>q :q<CR>
-
 " Source init.vim
 nnoremap <C-s> :source $MYVIMRC<CR>
 
