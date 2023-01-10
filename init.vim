@@ -1,5 +1,5 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Sections:
+" SectioAPI
 "   => Source files
 "   => General
 "   => Plugins
@@ -26,6 +26,7 @@
 "   => Leader mappings
 "   => Additional helpful remaps
 "   => Autocmds
+"   => API
 "   => Functions
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
@@ -140,11 +141,6 @@ filetype plugin indent on   " required
 lua << EOF
 require('D3vanagar1.settings.general')
 EOF
-
-" have to write as when init.vim is sourced this settings are lost
-:highlight Visual cterm=reverse guibg=Purple
-:highlight Folded guibg=lightblack guifg=lightgrey
-:highlight Foldedcolumn guibg=darkgrey guifg=white
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> Netrw
@@ -355,7 +351,7 @@ require('D3vanagar1.mappings.leader')
 EOF
 
 " Source init.vim
-nnoremap <C-s> :source $MYVIMRC<CR>
+" nnoremap <C-s> :source $MYVIMRC<CR>
 
 " toggle paren match highlighting
 " (mnemonic: [p]aren match)
@@ -431,6 +427,13 @@ if has('autocmd')
 augroup END
 endif
 endif
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" ==> API
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.settings.api')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Functions
