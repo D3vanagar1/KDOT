@@ -1,6 +1,9 @@
 local action_state = require("telescope.actions.state")
 local actions = require("telescope.actions")
-require('telescope').setup{
+local built = require("telescope.builtin")
+
+
+require("telescope").setup({
     defaults = {
         -- Default configuration for telescope goes here:
         -- config_key = value,
@@ -37,7 +40,7 @@ require('telescope').setup{
                 end
             end,
             attach_mappings = function()
-                actions.select_default:enhance {
+                actions.select_default:enhance({
                     post = function()
                         -- if we found something, go to line
                         local prompt = action_state.get_current_line()
@@ -47,16 +50,16 @@ require('telescope').setup{
                             vim.api.nvim_win_set_cursor(0, { lnum, 0 })
                         end
                     end,
-                }
+                })
                 return true
             end,
         },
-  },
-  extensions = {
-    -- Your extension configuration goes here:
-    -- extension_name = {
-    --   extension_config_key = value,
-    -- }
-    -- please take a look at the readme of the extension you want to configure
-  }
-}
+    },
+    extensions = {
+        -- Your extension configuration goes here:
+        -- extension_name = {
+        --   extension_config_key = value,
+        -- }
+        -- please take a look at the readme of the extension you want to configure
+    },
+})

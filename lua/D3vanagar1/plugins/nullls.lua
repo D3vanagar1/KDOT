@@ -5,18 +5,49 @@ local sources = {
     formatting.autopep8, -- python
     formatting.stylua, -- lua
 }
+
+local async_formatting = function(bufnr)
+    bufnr = bufnr or vim.api.nvim_get_current_buf()
+
+    vim.lsp.buf_request(
+        bufnr,
+        "textDocument/formatting",
+        vim.lsp.util.make_formatting_params({}),
+        function(err, res, ctx)
+            if err then
+                local err_msg = type(err) == "string" and err or err.message
+                -- Can modify log message / level
+                vim.notify("formatting: " .. err_msg, vim.log.levels.WARN)
+                return
+            end
+
+            -- don't apply results if buffer is unloaded or has been modified
+            if not vim.api.nvim_buf_is_loaded(bufnr) or vim.api.nvim_buf_get_option(bufnr, "modified") then
+                return
+            end
+
+            if res then
+                local client = vim.lsp.get_client_by_id(ctx.client_id)
+                vim.lsp.util.apply_text_edits(res, bufnr, client and client.offset_encoding or "utf-16")
+                vim.api.nvim_buf_call(bufnr, function()
+                    vim.cmd("silent noautocmd update")
+                end)
+            end
+        end
+    )
+end
+
 null_ls.setup({
     sources = sources,
-
-    -- uses formatter code on write (:w)
+    debug = false,
     on_attach = function(client, bufnr)
         if client.supports_method("textDocument/formatting") then
             vim.api.nvim_clear_autocmds({ group = augroup, buffer = bufnr })
-            vim.api.nvim_create_autocmd("BufWritePre", {
+            vim.api.nvim_create_autocmd("BufWritePost", {
                 group = augroup,
                 buffer = bufnr,
                 callback = function()
-                    vim.lsp.buf.format({ bufnr = bufnr })
+                    async_formatting(bufnr)
                 end,
             })
         end
