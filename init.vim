@@ -305,8 +305,6 @@ require('D3vanagar1.plugins.lsp')
 require('D3vanagar1.plugins.harpoon')
 require('D3vanagar1.plugins.nullls')
 EOF
-" TODO: remap doesn't work in lua file only works in vimscrpt
-nnoremap <leader>a :lua require("harpoon.mark").add_file()<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ->LuaSnip
