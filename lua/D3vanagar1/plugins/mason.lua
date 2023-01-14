@@ -3,7 +3,17 @@ require("mason").setup({
         icons = {
             package_installed = "✓",
             package_pending = "➜",
-            package_uninstalled = "✗"
-        }
-    }
+            package_uninstalled = "✗",
+        },
+    },
+})
+
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "pyright",
+        "marksman",
+        "bashls",
+        "vimls",
+        "ltex",
+    },
 })

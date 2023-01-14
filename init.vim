@@ -90,9 +90,6 @@ Plug 'iurimateus/luasnip-latex-snippets.nvim'
 " Formatter
 Plug 'jose-elias-alvarez/null-ls.nvim'
 
-" helpful lsp setup
-Plug 'VonHeikemen/lsp-zero.nvim'
-
 " syntax-checker with lsp support
 Plug 'dense-analysis/ale'
 
@@ -310,7 +307,6 @@ lua << EOF
 -- all lsp configuration
 require('D3vanagar1.lspconfig')
 require('D3vanagar1.plugins.mason')
-require('D3vanagar1.plugins.lsp')
 require('D3vanagar1.plugins.harpoon')
 require('D3vanagar1.plugins.nullls')
 EOF

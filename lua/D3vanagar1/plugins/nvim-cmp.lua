@@ -38,6 +38,9 @@ cmp.setup({
     },
 })
 
+cmp.mapping.preset["<Tab>"] = nil
+cmp.mapping.preset["<S-Tab>"] = nil
+
 -- Set configuration for specific filetype.
 cmp.setup.filetype("gitcommit", {
     sources = cmp.config.sources({
@@ -76,4 +79,13 @@ require("lspconfig")["html"].setup({
 })
 require("lspconfig")["julials"].setup({
     capabilities = capabilities,
+})
+
+local lspconfig = require("lspconfig")
+require("mason-lspconfig").setup_handlers({
+    function(server_name)
+        lspconfig[server_name].setup({
+            capabilities = capabilities,
+        })
+    end,
 })
