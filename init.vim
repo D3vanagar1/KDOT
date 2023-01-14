@@ -14,6 +14,7 @@
 "       -> which-key
 "       -> Nvm-cmp
 "       -> nvim-dap
+"       -> tmux
 "       -> vim-slime
 "       -> indentLine
 "       -> vimux
@@ -102,8 +103,8 @@ Plug 'mfussenegger/nvim-dap'
 Plug 'nvim-telescope/telescope-dap.nvim'
 Plug 'theHamsta/nvim-dap-virtual-text'
 
-" Seamless navigation between tmux panes and vim splits
-Plug 'christoomey/vim-tmux-navigator'
+" Seamless navigation and resizing between tmux panes and vim splits
+Plug 'aserowy/tmux.nvim'
 " Avoid reloading code by sending it to a live REPL
 Plug 'jpalardy/vim-slime'
 " Show indentation level
@@ -244,6 +245,14 @@ nnoremap <leader>db :Telescope dap list_breakpoints<CR>
 
 " Maximizes selected window. Run again to toggle off
 nnoremap <leader>m :MaximizerToggle!<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" -> tmux.nvim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+lua << EOF
+require('D3vanagar1.plugins.tmux')
+EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " -> vim-slime
