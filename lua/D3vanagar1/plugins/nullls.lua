@@ -4,6 +4,8 @@ local formatting = null_ls.builtins.formatting
 local sources = {
     formatting.autopep8, -- python
     formatting.stylua, -- lua
+    formatting.json_tool, -- json
+    formatting.vim_format, -- vim
 }
 
 local async_formatting = function(bufnr)
