@@ -368,6 +368,9 @@ vnoremap / /\v
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ==> Autocmds
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua << EOF
+require('D3vanagar1.autocmds')
+EOF
 
 if has('autocmd')
     " set relativenumber only if it is the focused split
@@ -376,12 +379,6 @@ if has('autocmd')
         autocmd BufEnter, FocusGained, InsertLeave * set relativenumber
         autocmd BufEnter, FocusLost, InsertLeave * set norelativenumber
     augroup END
-
-    " Resets pane sizes if vim window dimensions are changed
-    autocmd VimResized * execute "normal! \<c-w>="
-
-    " Remove all trailing whitespace when saving file
-    autocmd BufWritePre * :%s/\s\+$//e
 
     " Enabled/Disable Focus depending on selected pane
     if exists('*matchaddpos')
@@ -412,15 +409,6 @@ if has('autocmd')
     augroup END
 
     call s:SetBlinds()
-
-    " Use TextYankPost
-    if exists('##TextYankPost')
-        augroup highlight_yank
-    autocmd!
-
-    au TextYankPost * silent! lua vim.highlight.on_yank{higroup="IncSearch", timeout=200}
-augroup END
-endif
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
