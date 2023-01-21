@@ -1,9 +1,10 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" SectioAPI
+" Sections
 "   => Source files
-"   => General
-"   => Plugins
+"   => Settings
+"       -> General
 "       -> Netrw
+"   => Plugins
 "       -> Kanagawa
 "       -> Treesitter
 "       -> Telescope
