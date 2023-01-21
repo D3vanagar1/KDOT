@@ -59,7 +59,21 @@ opt.lazyredraw = true
 -- The screen will not be redrawn while executing macros, registers and other commands that have not been typed.
 opt.list = true
 -- Show invisible characters that are in listchars
-opt.listchars = { tab = "<->", trail = "·" }
+opt.listchars = {
+    tab = "▷⋯",
+    trail = "•"
+}
+-- Characters to show for invisible characters
+opt.fillchars = {
+    diff = "∙",
+    eob = " ",
+    fold = "·",
+    vert = "┃",
+    foldopen = "▾",
+    foldsep = "│",
+    foldclose = "▸"
+}
+-- Characters to use for certain UI elements
 opt.signcolumn = "number"
 -- Show signcolumns in place of relative line number where appropriate
 opt.spelllang = { "en_gb" }
@@ -67,6 +81,16 @@ opt.jumpoptions = "view"
 -- Restore mark-view where action occured in jumplist
 opt.timeoutlen = 500
 -- Time in milisecconds to wait for a mapped sequence to complete
+opt.laststatus = 2
+-- Always show status line
+opt.pumblend = 10
+-- pseudo-transparency for popup menu
+opt.winblend = 10
+-- pseudo-transparency for floating windows
+opt.switchbuf = "usetab"
+-- try to reuse existing tab pages when switching buffers
+opt.synmaxcol = 200
+-- Don't syntax highlight long lines
 
 -- Important Defaults
 -- *   belloff      -> all
