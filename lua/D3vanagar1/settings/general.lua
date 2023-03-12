@@ -91,6 +91,8 @@ opt.switchbuf = "usetab"
 -- try to reuse existing tab pages when switching buffers
 opt.synmaxcol = 200
 -- Don't syntax highlight long lines
+opt.equalalways = true
+-- always keep windows equal after closing or opening a window
 
 -- Important Defaults
 -- *   belloff      -> all
@@ -120,12 +122,16 @@ opt.expandtab = true
 ---------------------------------------
 -- ==> Non-opt settings
 ---------------------------------------
-vim.g.mapleader = " "
--- Set Space as leader key
-vim.g.maplocalleader = ","
 
-vim.g.markdown_fenced_languages = { "python", "lua", "vim", "html", "cpp" }
+local g = vim.g
+
+g.mapleader = " "
+-- Set Space as leader key
+g.maplocalleader = ","
+-- Set comma as local leader key
+g.markdown_fenced_languages = { "python", "lua", "vim", "html", "cpp" }
 -- Allow fenced codeblocks ('''<language> --code--''') for given languages
-vim.g.loaded_matchparen = 0
+g.loaded_matchparen = 0
+-- Disable matchparen plugin
 vim.o.whichwrap = vim.o.whichwrap .. "<,>"
 -- Wrap movenemnt between lines in N/V modes
