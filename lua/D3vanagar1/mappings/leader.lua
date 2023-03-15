@@ -16,8 +16,8 @@ vim.keymap.set("n", "<Leader>w", ":w<CR>", opts)
 vim.keymap.set("n", "<Leader>q", ":q<CR>", opts)
 
 -- Making new splits
-vim.keymap.set("n", "<Leader>nh", ":new<space>", opts)
-vim.keymap.set("n", "<Leader>nv", ":vnew<space>", opts)
+vim.keymap.set("n", "<Leader>_", ":sp ./<CR>", opts)
+vim.keymap.set("n", "<Leader>|", ":vsp ./<CR>", opts)
 
 -- Resizing window
 vim.keymap.set("n", "<Leader>h+", ":resize +5<CR>", opts)
@@ -26,7 +26,7 @@ vim.keymap.set("n", "<Leader>v+", ":vertical resize +5<CR>", opts)
 vim.keymap.set("n", "<Leader>v-", ":vertical resize -5<CR>", opts)
 
 -- Close current buffer tab
-vim.keymap.set("n", "<C-w>", ":bd<CR>", opts)
+vim.keymap.set("n", "<C-x>", ":bd<CR>", opts)
 -- Go to previous buffer
 vim.keymap.set("n", "<Leader>1", ":bp<CR>", opts)
 -- Go to next buffer

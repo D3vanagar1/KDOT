@@ -37,3 +37,14 @@ api.nvim_create_autocmd("BufWritePre", {
 api.nvim_create_autocmd("VimResized", {
 	command = "execute 'normal! <c-w>='",
 })
+
+
+-- Set relative line number only in focused pane
+api.nvim_create_autocmd("WinEnter", {
+    command = "setlocal relativenumber",
+})
+api.nvim_create_autocmd("WinLeave", {
+    command = "setlocal norelativenumber",
+})
+
+

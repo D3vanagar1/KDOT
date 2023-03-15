@@ -374,13 +374,6 @@ require('D3vanagar1.autocmds')
 EOF
 
 if has('autocmd')
-    " set relativenumber only if it is the focused split
-    augroup numbertoggle
-        autocmd!
-        autocmd BufEnter, FocusGained, InsertLeave * set relativenumber
-        autocmd BufEnter, FocusLost, InsertLeave * set norelativenumber
-    augroup END
-
     " Enabled/Disable Focus depending on selected pane
     if exists('*matchaddpos')
         autocmd BufEnter,FocusGained,Vimenter,WinEnter * call Focus_window()
