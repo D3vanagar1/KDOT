@@ -74,7 +74,7 @@ opt.fillchars = {
     foldclose = "▸"
 }
 -- Characters to use for certain UI elements
-opt.signcolumn = "number"
+opt.signcolumn = "yes"
 -- Show signcolumns in place of relative line number where appropriate
 opt.spelllang = { "en_gb" }
 opt.jumpoptions = "view"
