@@ -77,6 +77,8 @@ opt.fillchars = {
 opt.signcolumn = "yes"
 -- Show signcolumns in place of relative line number where appropriate
 opt.spelllang = { "en_gb" }
+opt.spell = true
+-- Enable spell checking
 opt.jumpoptions = "view"
 -- Restore mark-view where action occured in jumplist
 opt.timeoutlen = 500
