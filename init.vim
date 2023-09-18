@@ -39,6 +39,8 @@
 filetype off
 call plug#begin('~/.config/nvim/plugged')
 
+Plug 'nvim-neorg/neorg', {'do': ':Neorg sync-parsers'}
+
 " Colorscheme
 Plug 'rebelot/kanagawa.nvim'
 " Undotree
@@ -146,6 +148,10 @@ EOF
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 lua << EOF
 require('D3vanagar1.settings.netrw')
+EOF
+
+lua << EOF
+require('D3vanagar1.plugins.neorg')
 EOF
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

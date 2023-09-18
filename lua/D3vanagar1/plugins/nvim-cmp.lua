@@ -29,6 +29,7 @@ cmp.setup({
         { name = "nvim_lsp" },
         { name = "luasnip" },
         { name = "copilot" },
+        { name = "neorg" },
     }, {
         { name = "path" },
         { name = "buffer", keyword_length = 4 },
