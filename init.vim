@@ -40,6 +40,7 @@ filetype off
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'nvim-neorg/neorg', {'do': ':Neorg sync-parsers'}
+Plug 'nvim-neorg/neorg-telescope'
 
 " Colorscheme
 Plug 'rebelot/kanagawa.nvim'
