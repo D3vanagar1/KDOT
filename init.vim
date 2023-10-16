@@ -86,6 +86,8 @@ Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'saadparwaiz1/cmp_luasnip'
+" for vimtex compatibility in .tex files
+Plug 'hrsh7th/cmp-omni'
 " Snippets
 Plug 'L3MON4D3/LuaSnip'
 Plug 'rafamadriz/friendly-snippets'
@@ -227,6 +229,7 @@ EOF
 
 lua << EOF
 require('D3vanagar1.plugins.nvim-cmp')
+require('D3vanagar1.plugins.cmp-omni')
 
 EOF
 

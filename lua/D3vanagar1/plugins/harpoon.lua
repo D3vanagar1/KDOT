@@ -2,18 +2,17 @@ local mark = require("harpoon.mark")
 local ui = require("harpoon.ui")
 
 vim.keymap.set("n", "<Leader>a", mark.add_file)
-vim.keymap.set("n", "©", ui.toggle_quick_menu) -- © is the mac key code for alt+g
+vim.keymap.set("n", "<C-e>", ui.toggle_quick_menu)
 
-vim.keymap.set("n", "˙", function() -- ˙ is the mac key code for alt+h
-	ui.nav_file(2)
+vim.keymap.set("n", "<C-p>", function()
+    ui.nav_file(1)
 end)
-
-vim.keymap.set("n", "∆", function() -- ∆ is the mac key code for alt+j
-	ui.nav_file(2)
+vim.keymap.set("n", "<C-b>", function()
+    ui.nav_file(2)
 end)
-vim.keymap.set("n", "˚", function() -- ˚ is the mac key code for alt+k
-	ui.nav_file(3)
+vim.keymap.set("n", "<C-n>", function()
+    ui.nav_file(3)
 end)
-vim.keymap.set("n", "¬", function() -- ¬ is the mac key code for alt+l
-	ui.nav_file(4)
+vim.keymap.set("n", "<C-m>", function()
+    ui.nav_file(4)
 end)
