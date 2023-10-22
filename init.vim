@@ -58,7 +58,7 @@ Plug 'kyazdani42/nvim-web-devicons' " optional, for file icons
 " Universal commenter, handles filetypes
 Plug 'tomtom/tcomment_vim'
 " Status/tabline
-Plug 'feline-nvim/feline.nvim'
+Plug 'https://github.com/freddiehaddad/feline.nvim'
 " Tmux statusline generator
 Plug 'edkolev/tmuxline.vim'
 " Telescope
