@@ -73,9 +73,6 @@ require('lazy').setup({
   -- keys can be used to configure plugin behavior/loading/etc.
   --
   -- Use `opts = {}` to force a plugin to be loaded.
-  --
-  --  This is equivalent to:
-  --    require('Comment').setup({})
 
   -- "gc" to comment visual regions/lines
   { 'numToStr/Comment.nvim', opts = {} },
@@ -718,7 +715,6 @@ require('lazy').setup({
   -- place them in the correct locations.
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
-  'aserowy/tmux.nvim',
   --
   --  Here are some example plugins that I've included in the Kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
@@ -735,18 +731,6 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
-  {
-    'vhyrro/luarocks.nvim',
-    priority = 1000, -- We'd like this plugin to load first out of the rest
-    config = true, -- This automatically runs `require("luarocks-nvim").setup()`
-  },
-  {
-    'nvim-neorg/neorg',
-    dependencies = { 'luarocks.nvim' },
-  },
-  'nvim-neorg/neorg-telescope',
-  'wincent/scalpel',
-  'ThePrimeagen/harpoon',
   { import = 'custom.plugins' },
 }, {
   ui = {
@@ -769,6 +753,4 @@ require('lazy').setup({
     },
   },
 })
-
--- custom configurations for plugins in separate files
-require 'D3vanagar1.plugins'
+vim.cmd 'colorscheme kanagawa'
