@@ -95,6 +95,8 @@ opt.synmaxcol = 200
 -- Don't syntax highlight long lines
 opt.equalalways = true
 -- always keep windows equal after closing or opening a window
+opt.backupcopy = 'yes'
+-- makes a copy of the file and overwrites to original -> keeping same i-node
 
 -- Important Defaults
 -- *   belloff      -> all
@@ -109,7 +111,7 @@ opt.equalalways = true
 
 opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 opt.undofile = true
--- Automatically save undo history to undofile
+-- Automaically save undo history to undofile
 
 -- Important Defaults
 -- *    backup       -> off
