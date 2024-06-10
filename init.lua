@@ -30,20 +30,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
-
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.highlight.on_yank()`
-vim.api.nvim_create_autocmd('TextYankPost', {
-  desc = 'Highlight when yanking (copying) text',
-  group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
-})
-
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -52,6 +38,9 @@ if not vim.loop.fs_stat(lazypath) then
   vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
+
+-- [[ Basic autocommands]]
+require 'D3vanagar1.autocmds'
 
 -- [[ Configure and install plugins ]]
 --
@@ -292,7 +281,7 @@ require('lazy').setup({
       --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
       --    function will be executed to configure the current buffer
       vim.api.nvim_create_autocmd('LspAttach', {
-        group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
+        group = vim.api.nvim_create_augroup('lsp-attach', { clear = true }),
         callback = function(event)
           -- NOTE: Remember that Lua is a real programming language, and as such it is possible
           -- to define small helper and utility functions so you don't have to repeat yourself.
@@ -351,7 +340,7 @@ require('lazy').setup({
           -- When you move your cursor, the highlights will be cleared (the second autocommand).
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client.server_capabilities.documentHighlightProvider then
-            local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+            local highlight_augroup = vim.api.nvim_create_augroup('lsp-highlight', { clear = false })
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
               group = highlight_augroup,
@@ -365,10 +354,10 @@ require('lazy').setup({
             })
 
             vim.api.nvim_create_autocmd('LspDetach', {
-              group = vim.api.nvim_create_augroup('kickstart-lsp-detach', { clear = true }),
+              group = vim.api.nvim_create_augroup('lsp-detach', { clear = true }),
               callback = function(event2)
                 vim.lsp.buf.clear_references()
-                vim.api.nvim_clear_autocmds { group = 'kickstart-lsp-highlight', buffer = event2.buf }
+                vim.api.nvim_clear_autocmds { group = 'lsp-highlight', buffer = event2.buf }
               end,
             })
           end
