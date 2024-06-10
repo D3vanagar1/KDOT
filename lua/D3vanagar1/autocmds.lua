@@ -32,6 +32,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
     vim.wo.relativenumber = true
   end,
 })
+
 vim.api.nvim_create_autocmd('WinLeave', {
   pattern = { '*' },
   callback = function()
@@ -39,76 +40,65 @@ vim.api.nvim_create_autocmd('WinLeave', {
   end,
 })
 
--- FIX: some lines keep black background on refocus
-
 -- Enabled/Disable Focus depending on selected pane
--- From Greg Hurrell's github
--- https://github.com/wincent/wincent/blob/4578e56cc23/roles/dotfiles/files/.vim/autoload/autocmds.vim#L39-L76
---
--- Apply "blinds" to non-selected panes (improved focus)
-if (vim.g.loaded_blinds and vim.g.loaded_blinds ~= 0) or vim.o.cp then
-  return
+-- Inspired by Greg Hurrell's focus/unfocusing
+
+-- Function to set highlights
+local function set_highlights()
+  local fg_colour = '#5c6370'
+  local bg_colour = '#1e1e1e'
+  local cmt_colour = '#4b5363'
+  local highlight_groups = {
+    { name = 'WinBlindsNormal', bg = bg_colour, fg = fg_colour },
+    { name = 'WinBlindsComment', bg = bg_colour, fg = cmt_colour },
+    { name = 'WinBlindsIdentifier', bg = bg_colour, fg = fg_colour },
+    { name = 'WinBlindsString', bg = bg_colour, fg = fg_colour },
+    { name = 'WinBlindsFunction', bg = bg_colour, fg = #fg_colour },
+    { name = 'WinBlindsKeyword', bg = bg_colour, fg = fg_colour },
+    -- Add more as needed
+  }
+
+  for _, group in ipairs(highlight_groups) do
+    vim.api.nvim_set_hl(0, group.name, { bg = group.bg, fg = group.fg })
+  end
 end
-vim.g.loaded_blinds = 1
 
-if vim.g.blinds_guibg == nil then
-  vim.g.blinds_guibg = 'Black'
+-- Function to apply 'blinds' effect to unfocused windows
+local function apply_blinds()
+  set_highlights() -- Ensure highlights are set
+  local current_win = vim.api.nvim_get_current_win()
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if win ~= current_win then
+      vim.api.nvim_win_call(win, function()
+        vim.wo.winhighlight = table.concat({
+          'Normal:WinBlindsNormal',
+          'Comment:WinBlindsComment',
+          'Identifier:WinBlindsIdentifier',
+          'String:WinBlindsString',
+          'Function:WinBlindsFunction',
+          'Keyword:WinBlindsKeyword',
+          -- Add more as needed
+        }, ',')
+      end)
+    else
+      vim.api.nvim_win_call(win, function()
+        vim.wo.winhighlight = 'Normal:Normal'
+      end)
+    end
+  end
 end
 
-local function SetBlinds()
-  vim.cmd('hi Blinds guibg=' .. vim.g.blinds_guibg)
-end
-
-local blinds_augroup = vim.api.nvim_create_augroup('blinds', { clear = true })
-
-vim.api.nvim_create_autocmd({ 'WinEnter', 'BufWinEnter' }, {
+-- Autocommand for when a window gains focus
+vim.api.nvim_create_autocmd('WinEnter', {
   pattern = '*',
-  callback = function()
-    vim.wo.winhighlight = ''
-    Focus_window()
-  end,
-  group = blinds_augroup,
+  callback = apply_blinds,
 })
 
+-- Autocommand for when a window loses focus
 vim.api.nvim_create_autocmd('WinLeave', {
   pattern = '*',
-  callback = function()
-    if vim.bo.buflisted then
-      vim.wo.winhighlight =
-        'Normal:Blinds,ColorColumn:Blinds,CursorColumn:Blinds,CursorLine:Blinds,EndOfBuffer:Blinds,LineNr:Blinds,NonText:Blinds,FoldColumn:Blinds,SignColumn:Blinds,VertSplit:Blinds,Whitespace:Blinds'
-      Blur_window()
-    end
-  end,
-  group = blinds_augroup,
+  callback = apply_blinds,
 })
 
-vim.api.nvim_create_autocmd('ColorScheme', { pattern = '*', callback = SetBlinds, group = blinds_augroup })
-
-SetBlinds()
-
--- Blur window
-function Blur_window()
-  if vim.w.karan_matches == nil then
-    vim.w.karan_matches = {}
-  end
-  local height = vim.api.nvim_win_get_height(0)
-  local slop = math.floor(height / 2)
-  local start = math.max(1, vim.fn.line 'w0' - slop)
-  local _end = math.min(vim.fn.line '$', vim.fn.line 'w$' + slop)
-  while start <= _end do
-    local next = start + 8
-    local id = vim.fn.matchaddpos('Blinds', { { start, 0 }, { math.min(_end, next), 0 } }, 1000)
-    table.insert(vim.w.karan_matches, id)
-    start = next
-  end
-end
-
--- Focus window
-function Focus_window()
-  if vim.w.karan_matches ~= nil then
-    for _, match in ipairs(vim.w.karan_matches) do
-      pcall(vim.fn.matchdelete, match)
-    end
-    vim.w.karan_matches = {}
-  end
-end
+-- Initial application of 'blinds' effect to set it up on startup
+apply_blinds()
