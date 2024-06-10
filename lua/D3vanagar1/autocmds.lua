@@ -42,6 +42,8 @@ vim.api.nvim_create_autocmd('WinLeave', {
 -- FIX: some lines keep black background on refocus
 
 -- Enabled/Disable Focus depending on selected pane
+-- From Greg Hurrell's github
+-- https://github.com/wincent/wincent/blob/4578e56cc23/roles/dotfiles/files/.vim/autoload/autocmds.vim#L39-L76
 --
 -- Apply "blinds" to non-selected panes (improved focus)
 if (vim.g.loaded_blinds and vim.g.loaded_blinds ~= 0) or vim.o.cp then
