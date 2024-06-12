@@ -58,7 +58,7 @@ return {
           },
 
           i = { -- Bind in insert mode
-            { '<C-l>', 'core.integrations.telescope.insert_link' },
+            { '<C-i>', 'core.integrations.telescope.insert_link' },
           },
         }, {
           silent = true,
