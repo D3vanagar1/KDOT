@@ -7,5 +7,4 @@ return {
   'thesis/vim-solidity',
   -- vim mmarkdown
   'godlygeek/tabular',
-  'preservim/vim-markdown',
 }
