@@ -2,12 +2,10 @@
 --
 
 -- settings
-require 'D3vanagar1.settings.general'
-require 'D3vanagar1.settings.api'
+require 'D3vanagar1.settings'
 
 -- key mappings
-require 'D3vanagar1.mappings.basics'
-require 'D3vanagar1.mappings.leader'
+require 'D3vanagar1.mappings'
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -23,14 +21,6 @@ require 'D3vanagar1.autocmds'
 
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
-
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
-
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/D3vanagar1/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
   { import = 'D3vanagar1.plugins' },
 }, {
   ui = {
