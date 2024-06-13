@@ -135,7 +135,5 @@ g.maplocalleader = ','
 -- Set comma as local leader key
 g.markdown_fenced_languages = { 'python', 'lua', 'vim', 'html', 'cpp' }
 -- Allow fenced codeblocks ('''<language> --code--''') for given languages
-g.loaded_matchparen = 0
--- Disable matchparen plugin
 vim.o.whichwrap = vim.o.whichwrap .. '<,>'
 -- Wrap movenemnt between lines in N/V modes
