@@ -13,6 +13,6 @@ return {
     -- mappings
 
     -- counts words in text
-    vim.keymap.set('n', '<leader>cw', '<Cmd>VimtexCountWords<CR>', { silent = true })
+    vim.keymap.set('n', '<leader>vw', '<Cmd>VimtexCountWords<CR>', { silent = true })
   end,
 }
