@@ -37,4 +37,10 @@ vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tms<CR>')
 -- or just use <C-\><C-n> to exit terminal mode
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
+-- correct spelling of most recent mistake in file
 vim.keymap.set('i', '<C-s>', '<c-g>u<Esc>[s1z=`]a<c-g>u')
+
+-- basic saving and quitting file shortcuts
+vim.keymap.set('n', ';w', ':w<CR>')
+vim.keymap.set('n', ';q', ':wq<CR>')
+vim.keymap.set('n', ';Q', ':q!<CR>')
