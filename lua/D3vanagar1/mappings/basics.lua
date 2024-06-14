@@ -22,8 +22,8 @@ vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
 vim.keymap.set('i', '<C-j>', '<esc>:m .+1<CR>==i')
 vim.keymap.set('i', '<C-k>', '<esc>:m .-2<CR>==i')
-vim.keymap.set('n', '<Leader>j', ':m .+1<CR>==')
-vim.keymap.set('n', '<Leader>k', ':m .-2<CR>==')
+vim.keymap.set('n', '<Leader>j', ':m .+1<CR>==', { desc = 'Move line down' })
+vim.keymap.set('n', '<Leader>k', ':m .-2<CR>==', { desc = 'Move line up' })
 
 -- enter new project without leaving vim
 -- TODO: If opening new project, should open in vim
@@ -38,9 +38,9 @@ vim.keymap.set('n', '<C-f>', '<cmd>silent !tmux neww tms<CR>')
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
 -- correct spelling of most recent mistake in file
-vim.keymap.set('i', '<C-s>', '<c-g>u<Esc>[s1z=`]a<c-g>u')
+vim.keymap.set('i', '<C-s>', '<c-g>u<Esc>[s1z=`]a<c-g>u', { desc = 'fix spelling' })
 
 -- basic saving and quitting file shortcuts
-vim.keymap.set('n', ';w', ':w<CR>')
-vim.keymap.set('n', ';q', ':wq<CR>')
-vim.keymap.set('n', ';Q', ':q!<CR>')
+vim.keymap.set('n', ';w', ':w<CR>', { desc = 'Write current file' })
+vim.keymap.set('n', ';q', ':wq<CR>', { desc = 'Exit current file' })
+vim.keymap.set('n', ';Q', ':q!<CR>', { desc = 'Exit without saving' })

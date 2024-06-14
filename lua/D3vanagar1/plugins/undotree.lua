@@ -20,6 +20,6 @@ return {
       },
     }
 
-    vim.keymap.set('n', '<Leader>u', require('undotree').toggle, { silent = true })
+    vim.keymap.set('n', '<Leader>u', require('undotree').toggle, { silent = true, desc = 'Undotree' })
   end,
 }

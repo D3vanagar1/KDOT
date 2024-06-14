@@ -20,7 +20,6 @@ vim.opt.rtp:prepend(lazypath)
 -- [[ Basic autocommands]]
 require 'D3vanagar1.autocmds'
 
--- NOTE: Here is where you install your plugins.
 require('lazy').setup({
   { import = 'D3vanagar1.plugins' },
 }, {
