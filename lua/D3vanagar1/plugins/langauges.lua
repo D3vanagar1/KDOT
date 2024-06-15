@@ -5,6 +5,4 @@ return {
   'mnacamura/vim-fennel-syntax',
   -- Solidity syntax highlight
   'thesis/vim-solidity',
-  -- vim mmarkdown
-  'godlygeek/tabular',
 }
