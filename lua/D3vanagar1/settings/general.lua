@@ -31,8 +31,9 @@ opt.splitright = true
 -- Vertical split to the right
 opt.splitbelow = true
 -- Horizontal split to the bottom
-opt.foldmethod = 'indent'
--- Enable folding on indentation
+opt.foldmethod = 'expr'
+-- Enable folding on expressions given by foldexpr
+opt.foldexpr = "nvim_treesitter#foldexpr()"
 opt.hlsearch = false
 -- Remove highlight when searching
 opt.mouse = 'a'
