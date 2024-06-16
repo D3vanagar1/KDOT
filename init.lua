@@ -1,6 +1,4 @@
 -- n-vim configuration
---
---
 
 -- settings
 require 'D3vanagar1.settings'
@@ -42,5 +40,6 @@ require('lazy').setup({
       lazy = '💤 ',
     },
   },
+  change_detection = { notify = false },
 })
 vim.cmd 'colorscheme kanagawa'
