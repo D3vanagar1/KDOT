@@ -33,7 +33,7 @@ opt.splitbelow = true
 -- Horizontal split to the bottom
 opt.foldmethod = 'expr'
 -- Enable folding on expressions given by foldexpr
-opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldexpr = 'nvim_treesitter#foldexpr()'
 opt.hlsearch = false
 -- Remove highlight when searching
 opt.mouse = 'a'
@@ -110,7 +110,6 @@ opt.backupcopy = 'yes'
 -- -> General file management
 -----------------------------
 
-opt.undodir = os.getenv 'HOME' .. '/.vim/undodir'
 opt.undofile = true
 -- Automaically save undo history to undofile
 
