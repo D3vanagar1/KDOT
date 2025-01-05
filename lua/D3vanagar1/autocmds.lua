@@ -40,6 +40,34 @@ vim.api.nvim_create_autocmd('WinLeave', {
   end,
 })
 
+-- only show ghost text for nvim-cmp at word boundaries
+-- not inside keyword
+-- source: https://github.com/hrsh7th/nvim-cmp/issues/2035#issuecomment-2347186210
+local config = require 'cmp.config'
+local toggoel_ghost_text = function()
+  if vim.api.nvim_get_mode().mode ~= 'i' then
+    return
+  end
+  local cursor_col = vim.fn.col '.'
+  local current_lin_contents = vim.fn.getline '.'
+  local char_after_cursor = current_lin_contents:sub(cursor_col, cursor_col)
+
+  local should_enable_ghost_text = char_after_cursor == '' or vim.fn.match(char_after_cursor, [[\k]]) == -1
+
+  local current = config.get().experimental.ghost_text
+  if current ~= should_enable_ghost_text then
+    config.set_global {
+      experimental = {
+        ghost_text = should_enable_ghost_text,
+      },
+    }
+  end
+end
+
+vim.api.nvim_create_autocmd({ 'InsertEnter', 'CursorMovedI' }, {
+  callback = toggoel_ghost_text,
+})
+
 -- Enabled/Disable Focus depending on selected pane
 -- Inspired by Greg Hurrell's focus/unfocusing
 

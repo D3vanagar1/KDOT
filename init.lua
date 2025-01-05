@@ -15,9 +15,6 @@ if not vim.loop.fs_stat(lazypath) then
 end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
--- [[ Basic autocommands]]
-require 'D3vanagar1.autocmds'
-
 require('lazy').setup({
   { import = 'D3vanagar1.plugins' },
 }, {
@@ -42,4 +39,10 @@ require('lazy').setup({
   },
   change_detection = { notify = false },
 })
+
+-- [[ Basic autocommands]]
+-- includes plugin dependant autocommands
+require 'D3vanagar1.autocmds'
+
+-- set colourscheme
 vim.cmd 'colorscheme kanagawa'
