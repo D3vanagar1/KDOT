@@ -11,6 +11,7 @@ vim.keymap.set('n', 'N', 'Nzzzv')
 vim.keymap.set('n', 'J', 'mzJ`z')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<c-u>', '<c-u>zz')
+vim.keymap.set('n', '%', '%zzzv')
 
 -- Set default search to be "very magic" mode for reg exprs
 -- TODO: doesn't work in lua

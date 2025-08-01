@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd('WinLeave', {
 -- not inside keyword
 -- source: https://github.com/hrsh7th/nvim-cmp/issues/2035#issuecomment-2347186210
 local config = require 'cmp.config'
-local toggoel_ghost_text = function()
+local toggle_ghost_text = function()
   if vim.api.nvim_get_mode().mode ~= 'i' then
     return
   end
@@ -65,7 +65,7 @@ local toggoel_ghost_text = function()
 end
 
 vim.api.nvim_create_autocmd({ 'InsertEnter', 'CursorMovedI' }, {
-  callback = toggoel_ghost_text,
+  callback = toggle_ghost_text,
 })
 
 -- Enabled/Disable Focus depending on selected pane
