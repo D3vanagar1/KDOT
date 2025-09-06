@@ -10,4 +10,3 @@ return {
 }
 -- TODO:
 --  -- keymap for :TypstWatch (maybe linked to typst-preview)
---  -- fix nvim-cmp ghost-text error when in math mode

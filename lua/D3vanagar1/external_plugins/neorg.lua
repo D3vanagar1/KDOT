@@ -44,7 +44,6 @@ return {
           config = {
             workspaces = {
               notes = '~/Documents/notes',
-              lecture_notes = '~/Documents/class/FALL_2023/CMNS258/lecture_notes',
             },
           },
         },
