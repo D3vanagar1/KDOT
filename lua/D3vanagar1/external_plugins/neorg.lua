@@ -39,7 +39,9 @@ return {
           },
         },
         ['core.integrations.nvim-cmp'] = {}, -- integrating nvm-cmp with neorg
-        ['core.integrations.telescope'] = {}, -- integrating nvm-cmp with neorg
+        ['core.integrations.telescope'] = {}, -- integrating telescope with neorg
+        ['core.integrations.image'] = {}, -- integrating image.nvim with neorg
+        ['core.latex.renderer'] = {}, -- latex text redering
         ['core.dirman'] = { -- Manages Neorg workspace directories
           config = {
             workspaces = {
